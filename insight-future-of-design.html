@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Future of Design Isn’t Design | Innamorati Agency</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 5vw 20px 10vw;
+    }
+    .article-header {
+      padding: 10vw 5vw 5vw;
+      text-align: center;
+    }
+    .article-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      line-height: 1.1;
+      color: var(--text-dark);
+      margin-bottom: 2rem;
+    }
+    .article-meta {
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #666;
+      margin-bottom: 3rem;
+    }
+    .article-hero-wrapper {
+      position: relative;
+      width: 100%;
+      height: 80vh;
+      margin-bottom: 5vw;
+      overflow: hidden;
+      cursor: none; /* Hide default cursor to emphasize the effect */
+    }
+    .article-hero-image-inner {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+      display: block;
+    }
+    .article-hero-wrapper::after {
+      content: '';
+      position: absolute;
+      top: var(--mouse-y, 50%);
+      left: var(--mouse-x, 50%);
+      width: 0;
+      height: 0;
+      background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 60%);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: width 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                  height 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                  opacity 0.6s ease;
+      pointer-events: none;
+      mix-blend-mode: overlay;
+    }
+    .article-hero-wrapper:hover .article-hero-image-inner {
+      transform: scale(1.03);
+    }
+    .article-hero-wrapper:hover::after {
+      width: 600px;
+      height: 600px;
+      opacity: 1;
+    }
+    .article-content p {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      line-height: 1.8;
+      color: var(--text-dark);
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body style="background-color: var(--bg-light);">
+
+  <!-- Standard Flat Navigation -->
+    <nav class="navbar-pill light-theme">
+    <div class="logo"><a href="index.html"><img src="assets/logo-1.png" alt="Innamorati Agency" style="height: 29px;"></a></div>
+    <ul class="nav-links">
+      <li><a href="works.html">Case Studies</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="studio.html">Studio</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger"><span></span><span></span></div>
+  </nav>
+
+  <header class="article-header blur-reveal-load">
+    <h1 class="article-title">The Future of Design Isn’t Design</h1>
+  </header>
+
+  <div class="article-hero-wrapper reveal-up delay-1">
+    <img src="676693ce38aa94109fe9795a1751e278d9f6bcc1-3072x2048.webp" class="article-hero-image-inner" alt="The Future of Design Isn't Design">
+  </div>
+
+  <main class="article-container reveal-up delay-2">
+    <div class="article-content">
+      <p>A question I came across on Reddit recently stuck with me.</p>
+      
+      <p>“Is there still a future for someone who’s just average at design? With AI advancing so fast, what happens to designers like me—and what should we pivot to?”</p>
+      
+      <p>It’s a fair question. And an honest one.</p>
+      
+      <p>The reality is that design, at least in its most visible form, is becoming commoditized. AI is already capable of producing layouts, visual directions, and iterations that would have required a junior or mid-level designer not that long ago. That doesn’t mean design is disappearing. It means the baseline has shifted. What was once considered solid execution is quickly becoming accessible to anyone with the right prompt.</p>
+      
+      <p>This kind of commoditization isn’t new. When tools become faster and cheaper, the value moves away from production and toward decision-making. Design execution is increasingly abundant. Judgment is not. AI is very good at making things. It’s very bad at deciding which things are worth making in the first place.</p>
+      
+      <p>What AI cannot understand is context. It doesn’t grasp business constraints, organizational dynamics, risk, timing, or long-term trade-offs. It can generate options endlessly, but it cannot take responsibility for a direction. That responsibility still sits with people. And that’s where designers continue to matter.</p>
+      
+      <p>The real divide emerging in the field isn’t between good and bad designers, or talented and untalented ones. It’s between those who primarily execute and those who think systemically. Designers who see their role as making things look better will feel increasing pressure. Designers who see their role as shaping clarity, direction, and outcomes will not.</p>
+      
+      <p>This doesn’t mean every designer needs to abandon craft or become a business executive. It means understanding how design fits into a larger system. It means knowing how value is created, how decisions are made, and how design influences behavior, perception, and growth. In that context, design becomes less about taste and more about leverage.</p>
+      
+      <p>For designers worried about their future, the answer isn’t necessarily to leave the field. It’s often to move closer to decision-making. Brand strategy, product thinking, creative direction, systems design, consulting, and entrepreneurship all sit adjacent to traditional design roles, but they’re defined less by output and more by judgment.</p>
+      
+      <p>Ironically, AI makes this transition easier. As execution becomes cheaper and faster, there is more space for thinking, questioning, and leadership. The designers who take advantage of that shift will find themselves more valuable, not less.</p>
+      
+      <p>Design is no longer primarily about making things look good. It’s about making the right thing. AI will continue to improve. Tools will get better. Outputs will get cheaper. That’s inevitable. What won’t be automated is the ability to stand behind a decision and explain why it works, why it matters, and why it’s worth committing to.</p>
+      
+      <p>That’s the part of design that will endure.</p>
+
+      <div class="author-block" style="margin-top: 5rem; padding-top: 2rem; border-top: 1px solid rgba(0,0,0,0.1); display: flex; align-items: center; gap: 20px;">
+        <img src="team/304be87d-a4e4-4e38-bf09-c58b96e600ad-2-e1741526363284 (1).jpg" alt="Elia Innamorati" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover;">
+        <div>
+          <div style="font-family: var(--font-sans); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #888; margin-bottom: 4px;">Insights</div>
+          <div style="font-family: var(--font-serif); font-size: 1.3rem; color: var(--text-dark);">By Elia Innamorati</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Massive Blue Footer -->
+      <footer class="footer-complex">
+    <div class="footer-main">
+      <div class="footer-left">
+        <div class="footer-grid-2">
+          <div class="footer-col">
+            <span class="footer-label">GENEVA STUDIO</span>
+            <p>Geneva</p>
+            <a href="contact.html" class="view-all-link footer-link-circle">Geneva Studio <span class="arrow-circle">&rarr;</span></a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-label">MIAMI STUDIO</span>
+            <p>Miami</p>
+            <a href="contact.html" class="view-all-link footer-link-circle">Miami Studio <span class="arrow-circle">&rarr;</span></a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-label">CONTACT</span>
+            <p>elia@innamorati.ch<br>+41 79 309 0690</p>
+            <a href="contact.html" class="view-all-link footer-link-circle" style="margin-top: 15px;">Start a Project <span class="arrow-circle">&rarr;</span></a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-label">CONNECT</span>
+            <ul class="footer-socials">
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Behance</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <span class="footer-label">GET IN TOUCH</span>
+        <form class="footer-form">
+          <div class="form-row">
+            <input type="text" placeholder="Your Name*">
+            <input type="email" placeholder="Your Email*">
+          </div>
+          <div class="form-row">
+            <input type="text" placeholder="Phone Number">
+            <input type="text" placeholder="Company Name">
+          </div>
+          <div class="form-row full-width">
+            <input type="text" placeholder="Message*">
+          </div>
+          <div class="form-submit-row">
+            <button type="submit" class="view-all-link submit-btn" style="background:transparent; border:none; padding:0; cursor:pointer;">Send Message <span class="arrow-circle">&rarr;</span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="footer-bar-left">
+        <a href="#">PRIVACY / COOKIES POLICY</a>
+      </div>
+      <div class="footer-bar-center">
+        <a href="works.html">CASE STUDIES</a>
+        <a href="services.html">SERVICES</a>
+        <a href="studio.html">STUDIO</a>
+        <a href="insights.html">INSIGHTS</a>
+        <a href="contact.html">CONTACT</a>
+      </div>
+      <div class="footer-bar-right">
+        <span class="footer-brand">Innamorati.</span>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+      <div class="legal-left">
+        Innamorati Agency Limited.
+      </div>
+      <div class="legal-right">
+        &copy; 2024 - 2026 Innamorati.
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Modern cursor-tracking ripple effect for the hero image
+    const heroWrapper = document.querySelector('.article-hero-wrapper');
+    if (heroWrapper) {
+      heroWrapper.addEventListener('mousemove', (e) => {
+        const rect = heroWrapper.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        heroWrapper.style.setProperty('--mouse-x', x + 'px');
+        heroWrapper.style.setProperty('--mouse-y', y + 'px');
+      });
+    }
+  </script>
+
+  <!-- Full Screen Menu Overlay -->
+  <div class="full-screen-menu">
+    <div class="menu-top">
+      <div class="logo"><a href="index.html" style="color:inherit; text-decoration:none;"><img src="assets/logo-1.png" alt="Innamorati Agency" style="height: 29px;"></a></div>
+      <div class="menu-close">✕</div>
+    </div>
+    <div class="menu-content">
+      <span class="menu-label">Menu</span>
+      <ul class="menu-links">
+        <li><a href="works.html">Case Studies</a></li>
+        <li><a href="services.html">Services</a></li>
+      <li><a href="studio.html">Studio</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+      <div class="menu-footer">
+    <div class="menu-footer-block">
+      <span>Visit</span>
+      <p>Geneva &amp; Miami</p>
+    </div>
+    <div class="menu-footer-block">
+      <span>Work With Us</span>
+      <a href="mailto:elia@innamorati.ch">elia@innamorati.ch</a>
+      <a href="contact.html">Schedule a call</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

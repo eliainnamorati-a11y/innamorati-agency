@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Innamorati | Brand Transformation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Floating Glass Navigation -->
+    <nav class="navbar-pill navbar-home">
+    <div class="logo"><a href="index.html"><img src="assets/logo-1.png" alt="Innamorati Agency" style="height: 29px;"></a></div>
+    <ul class="nav-links">
+      <li><a href="works.html">Case Studies</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="studio.html">Studio</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="hamburger"><span></span><span></span></div>
+  </nav>
+
+  <!-- Hero Wrapper -->
+  <div>
+    <!-- Fluid Moving Hero Section -->
+    <section class="hero" style="position: relative; overflow: hidden; background-color: var(--bg-light);">
+      <div class="hero-bg" style="position:absolute; inset:0; background:var(--bg-light);"></div>
+      <canvas id="webgl-fluid-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></canvas>
+      <div id="hover-glow" style="z-index: 2;"></div>
+      
+      <div class="hero-center-text">
+        <h1 class="blur-reveal-load">
+          <em>Transforming</em> Brands,<br>Building <em>Futures</em>
+        </h1>
+      </div>
+      
+      <div class="hero-bottom-text">
+        <p class="blur-reveal-load" style="animation-delay: 0.3s;">A Geneva-based brand transformation studio working across strategy, design, and digital.</p>
+      </div>
+
+    </section>
+  </div>
+
+  <div class="content-wrapper">
+  <!-- Ambition Block -->
+  <section class="block-text-massive reveal-up">
+    <span class="label-muted">Ambition</span>
+    <h2 class="ambition-text blur-reveal">We exist to make the <em>new</em> possible.<br>New clarity. New systems. New futures.</h2>
+    <video src="ScreenRecording_05-10-2026 10-35-07_1.mov" autoplay loop muted playsinline style="width: 100%; border-radius: 8px; margin-top: 4rem; box-shadow: 0 20px 50px rgba(0,0,0,0.15);"></video>
+  </section>
+
+  <!-- Industries (Sticky Horizontal Scroll) -->
+  <section class="industries-section bg-dark" id="industries-scroll-section">
+    <div class="industries-sticky-wrapper">
+      <div style="position: relative; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+      <div class="industries-header reveal-up">
+        <div class="industries-label">AREAS OF FOCUS</div>
+        <h2 class="industries-intro">Working at the intersection of strategy & creativity, developing high-growth corporate brands that not only lead today but inspire the possibilities of tomorrow.</h2>
+      </div>
+      
+      <div class="industries-track reveal-fade delay-1" id="industries-track">
+      <a href="finance.html" class="industry-card" style="text-decoration: none; color: inherit; display: block;">
+        <div class="industry-image" style="background: none; position: relative; overflow: hidden; transform: translateZ(0);">
+          <video id="letual-v1" autoplay muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1; transition: opacity 0.3s ease;">
+            <source src="le%20tual/1.mp4" type="video/mp4">
+          </video>
+          <video id="letual-v2" muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.3s ease;">
+            <source src="le%20tual/2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <h3 class="industry-title">Finance <br>& Investments</h3>
+        <p class="industry-desc">In today’s financial world, trust is the currency that matters most. We help finance and investment brands cut through noise with sharp strategy, fearless identity, and digital platforms built for what’s next.</p>
+      </a>
+
+      <a href="professional.html" class="industry-card" style="text-decoration: none; color: inherit; display: block;">
+        <div class="industry-image" style="background: none; position: relative; overflow: hidden;">
+          <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+            <source src="silverpine/1.MP4" type="video/mp4">
+          </video>
+        </div>
+        <h3 class="industry-title">Professional Services</h3>
+        <p class="industry-desc">Reputation is your most valuable asset - we help you protect and amplify it. From brand positioning to visual identity, we create a powerful presence that drives recognition and growth.</p>
+      </a>
+
+      <a href="luxury.html" class="industry-card" style="text-decoration: none; color: inherit; display: block;">
+        <div class="industry-image" style="background: none; position: relative; overflow: hidden; transform: translateZ(0);">
+          <video id="jacob-v" muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+            <source src="Jacob%20and%20co/jacob.mp4#t=10" type="video/mp4">
+          </video>
+        </div>
+        <h3 class="industry-title">Luxury <br>& Premium</h3>
+        <p class="industry-desc">Creating desire and exclusivity through meticulous brand craftsmanship. We design luxury brand worlds that captivate high-net-worth audiences and define cultural cachet.</p>
+      </a>
+
+      <a href="technology.html" class="industry-card" style="text-decoration: none; color: inherit; display: block;">
+        <div class="industry-image" style="background: none; position: relative; overflow: hidden;">
+          <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; animation: videoSwap3_1 6s infinite;">
+            <source src="hanseatic/1.mp4" type="video/mp4">
+          </video>
+          <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; animation: videoSwap3_2 6s infinite;">
+            <source src="hanseatic/2.mp4" type="video/mp4">
+          </video>
+          <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; animation: videoSwap3_3 6s infinite;">
+            <source src="hanseatic/3.mp4" type="video/mp4">
+          </video>
+        </div>
+        <h3 class="industry-title">Technology <br>& Innovation</h3>
+        <p class="industry-desc">Innovative ideas deserve standout brands. We help tech and innovation leaders bring clarity to complexity, tell impactful stories, and create brand experiences that drive momentum.</p>
+      </a>
+    </div>
+    
+    <div id="industries-progress-bar" style="position: absolute; bottom: 5vh; left: 0; right: 0; height: 1px; background: rgba(255,255,255,0.15); transform-origin: left; transform: scaleX(0); will-change: transform;"></div>
+    </div>
+  </div>
+</section>
+
+  <!-- Expertise Section -->
+  <section class="expertise-section" id="expertise-scroll-section">
+    <div class="expertise-sticky-wrapper">
+      <div class="expertise-top reveal-fade">
+      <div class="expertise-label">
+        <div class="industries-label">EXPERTISE</div>
+      </div>
+      <div class="expertise-intro">
+        <p class="expertise-intro-text">Grounded in deep research and sharp strategy, we define clear paths forward to uncover growth - where every creative move is strategically led. We craft purposeful identities and seamless brand experiences across digital, web, and marketing - made for impact today, and momentum tomorrow.</p>
+        <a href="services.html" class="expertise-link">Our Services <span style="font-family: var(--font-sans); border: 1px solid rgba(255,255,255,0.3); border-radius: 50%; padding: 4px 8px; font-size: 0.8rem; margin-left: 10px;">→</span></a>
+      </div>
+    </div>
+    
+    <div class="expertise-grid">
+      <div class="expertise-col parallax-col" data-index="0">
+        <div class="expertise-v-line"></div>
+        <h3>Strategy</h3>
+        <p>Grounded in research, driven by strategy, and crafted for impact - we turn insight into distinctive brand frameworks that build relevance, deepen connection, and drive momentum.</p>
+      </div>
+      <div class="expertise-col parallax-col" data-index="1">
+        <div class="expertise-v-line"></div>
+        <h3>Branding</h3>
+        <p>Designed to elevate, we craft impeccable visual and verbal identities that reflect who you are today and where you're headed next - whether refining your brand or redefining it entirely.</p>
+      </div>
+      <div class="expertise-col parallax-col" data-index="2">
+        <div class="expertise-v-line"></div>
+        <h3>Design</h3>
+        <p>Inspiring, striking, and strategic. We design communications that elevate perception, build recognition, and strengthen your brand's reputation - built for clarity, crafted for impact.</p>
+      </div>
+      <div class="expertise-col parallax-col" data-index="3">
+        <div class="expertise-v-line"></div>
+        <h3>Websites</h3>
+        <p>Smart, functional, and beautifully designed. Websites that look sharp, work hard, and drive results. We design and build digital brand experiences, seamlessly blending form and function.</p>
+      </div>
+      <div class="expertise-col parallax-col" data-index="4">
+        <div class="expertise-v-line"></div>
+        <h3>Marketing</h3>
+        <p>Ideas that move people. Backed by insight, built to perform, and made to last. We create smart, purposeful campaigns and content that connect with clarity and impact.</p>
+      </div>
+    </div>
+    <div class="expertise-h-line"></div>
+    </div>
+  </section>
+
+  <!-- Massive Work Label -->
+  <section class="block-text-massive pt-small" style="padding-bottom: 6vw; background-color: var(--bg-light);">
+    <span class="label-muted">Selected Work</span>
+    <h2 class="ambition-text blur-reveal" style="color: var(--text-dark);">Work created at moments where change <br><em>becomes inevitable by design.</em></h2>
+    <a href="works.html" class="button-pill">View All</a>
+  </section>
+
+  <!-- New Selected Work Grid -->
+  <section class="new-work-grid">
+    <!-- Project 1 (Matches col-span-6) -->
+    <a href="hanseatic.html" class="new-work-item item-1 reveal-up">
+      <div class="masonry-image-wrapper">
+        <img src="assets/hanseatic-final-4-copy.png" alt="Hanseatic">
+        <div class="hover-btn">View Case Study</div>
+      </div>
+      <div class="masonry-meta">
+        <h3>Hanseatic</h3>
+        <p>Rebuilding clarity for a historic institution at the heart of commerce.</p>
+        <div class="masonry-tags">
+          <span class="m-tag">Brand Strategy</span>
+          <span class="m-tag">Naming</span>
+          <span class="m-tag">Brand Identity</span>
+          <span class="m-tag">Logo</span>
+          <span class="m-tag">Guidelines</span>
+          <span class="m-tag">Website Design</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Project 2 (Matches col-span-5 col-start-8) -->
+    <a href="le-tual.html" class="new-work-item item-2 reveal-up">
+      <div class="masonry-image-wrapper">
+        <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
+          <source src="le%20tual/1.mp4" type="video/mp4">
+        </video>
+        <div class="hover-btn">View Case Study</div>
+      </div>
+      <div class="masonry-meta">
+        <h3>Le Tual Capital</h3>
+        <p>A new era of capital investment.</p>
+        <div class="masonry-tags">
+          <span class="m-tag">Brand Strategy</span>
+          <span class="m-tag">Brand Identity</span>
+          <span class="m-tag">Website Design</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Project 3 (Matches col-span-12) -->
+    <a href="melrose-kitchen.html" class="new-work-item item-3 reveal-up">
+      <div class="masonry-image-wrapper">
+        <img src="assets/High-quality-JPG-Melrose-Kitchen-Decembre-2024-190-scaled.jpg" alt="Melrose Kitchen">
+        <div class="hover-btn">View Case Study</div>
+      </div>
+      <div class="masonry-meta">
+        <h3>Melrose Kitchen</h3>
+        <p>Designing a new category for everyday nourishment.</p>
+        <div class="masonry-tags">
+          <span class="m-tag">Brand Strategy</span>
+          <span class="m-tag">Brand Identity</span>
+          <span class="m-tag">Packaging Design</span>
+          <span class="m-tag">Research & Insight</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Project 4 (Matches col-span-6) -->
+    <a href="silverpine.html" class="new-work-item item-1 reveal-up">
+      <div class="masonry-image-wrapper">
+        <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
+          <source src="silverpine/1.MP4" type="video/mp4">
+        </video>
+        <div class="hover-btn">View Case Study</div>
+      </div>
+      <div class="masonry-meta">
+        <h3>Silverpine</h3>
+        <p>A fresh, authoritative brand presence for professional services.</p>
+        <div class="masonry-tags">
+          <span class="m-tag">Digital Strategy</span>
+          <span class="m-tag">Brand Experience</span>
+        </div>
+      </div>
+    </a>
+  </section>
+
+  <!-- Growing Products Canvas (Scroll Sequence) -->
+  <section class="transition-wrapper" style="position: relative; height: 300vh; background-color: #111;">
+    <div class="sticky-container" style="position: sticky; top: 0; width: 100%; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+      <!-- Canvas for image sequence -->
+      <canvas id="hero-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></canvas>
+      
+      <!-- Overlay & Text -->
+      <div class="overlay-dark" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; background: rgba(0,0,0,0.4);"></div>
+      <h2 class="ambition-text" id="hero-fade-text" style="position: relative; z-index: 3; text-align: center; color: white;">Growing Brands by<br><em>Redefining Culture.</em></h2>
+    </div>
+  </section>
+
+  <!-- Insights Sector -->
+  <section class="block-text-massive reveal-up delay-1">
+    <span class="label-muted">Insights</span>
+    <h2 class="ambition-text blur-reveal" style="color:#2a2a2a; margin-bottom: 2rem;">The latest from <em>our</em> world and beyond.</h2>
+    
+    <div class="insights-row" id="home-insights-container">
+      <a href="insight-future-of-design.html" class="insight-card reveal-up delay-1">
+        <img src="676693ce38aa94109fe9795a1751e278d9f6bcc1-3072x2048.webp" class="insight-image" alt="Insight">
+        <h4>The Future of Design Isn't Design</h4>
+        <p>Insights • Read more</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Bright Blue Footer -->
+      <footer class="footer-complex">
+    <div class="footer-main">
+      <div class="footer-left">
+        <div class="footer-grid-2">
+          <div class="footer-col">
+            <span class="footer-label">GENEVA STUDIO</span>
+            <p>Geneva</p>
+            <a href="contact.html" class="view-all-link footer-link-circle">Geneva Studio <span class="arrow-circle">&rarr;</span></a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-label">MIAMI STUDIO</span>
+            <p>Miami</p>
+            <a href="contact.html" class="view-all-link footer-link-circle">Miami Studio <span class="arrow-circle">&rarr;</span></a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-label">CONTACT</span>
+            <p>elia@innamorati.ch<br>+41 79 309 0690</p>
+            <a href="contact.html" class="view-all-link footer-link-circle" style="margin-top: 15px;">Start a Project <span class="arrow-circle">&rarr;</span></a>
+          </div>
+          <div class="footer-col">
+            <span class="footer-label">CONNECT</span>
+            <ul class="footer-socials">
+              <li><a href="#">LinkedIn</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Behance</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <span class="footer-label">GET IN TOUCH</span>
+        <form class="footer-form">
+          <div class="form-row">
+            <input type="text" placeholder="Your Name*">
+            <input type="email" placeholder="Your Email*">
+          </div>
+          <div class="form-row">
+            <input type="text" placeholder="Phone Number">
+            <input type="text" placeholder="Company Name">
+          </div>
+          <div class="form-row full-width">
+            <input type="text" placeholder="Message*">
+          </div>
+          <div class="form-submit-row">
+            <button type="submit" class="view-all-link submit-btn" style="background:transparent; border:none; padding:0; cursor:pointer;">Send Message <span class="arrow-circle">&rarr;</span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <div class="footer-bar-left">
+        <a href="#">PRIVACY / COOKIES POLICY</a>
+      </div>
+      <div class="footer-bar-center">
+        <a href="works.html">CASE STUDIES</a>
+        <a href="services.html">SERVICES</a>
+        <a href="studio.html">STUDIO</a>
+        <a href="insights.html">INSIGHTS</a>
+        <a href="contact.html">CONTACT</a>
+      </div>
+      <div class="footer-bar-right">
+        <span class="footer-brand">Innamorati.</span>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+      <div class="legal-left">
+        Innamorati Agency Limited.
+      </div>
+      <div class="legal-right">
+        &copy; 2024 - 2026 Innamorati.
+      </div>
+    </div>
+  </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="b64.js" defer></script>
+  <script src="main.js" defer></script>
+  <script src="image-sequence.js" defer></script>
+
+<!-- Full Screen Menu Overlay -->
+<div class="full-screen-menu">
+  <div class="menu-top">
+    <div class="logo"><a href="index.html" style="color:inherit; text-decoration:none;"><img src="assets/logo-1.png" alt="Innamorati Agency" style="height: 29px;"></a></div>
+    <div class="menu-close">✕</div>
+  </div>
+  <div class="menu-content">
+    <span class="menu-label">Menu</span>
+    <ul class="menu-links">
+      <li><a href="works.html">Case Studies</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="studio.html">Studio</a></li>
+      <li><a href="insights.html">Insights</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+    <div class="menu-footer">
+    <div class="menu-footer-block">
+      <span>Visit</span>
+      <p>Geneva &amp; Miami</p>
+    </div>
+    <div class="menu-footer-block">
+      <span>Work With Us</span>
+      <a href="mailto:elia@innamorati.ch">elia@innamorati.ch</a>
+      <a href="contact.html">Schedule a call</a>
+    </div>
+  </div>
+</div>
+<script>
+  (function() {
+    const v1 = document.getElementById("letual-v1");
+    const v2 = document.getElementById("letual-v2");
+
+    if (v1 && v2) {
+      v1.loop = false;
+      v2.loop = false;
+      
+      // Ensure v2 has preloaded enough to know its duration
+      v2.preload = "auto";
+
+      function playSequence() {
+        v1.style.opacity = "1";
+        v2.style.opacity = "0";
+        v1.currentTime = 0;
+        let p1 = v1.play();
+        if (p1 !== undefined) p1.catch(() => {});
+
+        setTimeout(() => {
+          v1.style.opacity = "0";
+          v2.style.opacity = "1";
+          
+          let d2 = v2.duration;
+          if (!d2 || isNaN(d2)) { d2 = 10; }
+          v2.currentTime = Math.max(0, (d2 / 2) - 1.5);
+          
+          let p2 = v2.play();
+          if (p2 !== undefined) p2.catch(() => {});
+
+          setTimeout(() => {
+            playSequence();
+          }, 3000);
+
+        }, 5000);
+      }
+
+      // Start the loop after a brief delay
+      setTimeout(playSequence, 500);
+    }
+
+    // Jacob loop (from 10s to 20s)
+    const jacobV = document.getElementById("jacob-v");
+    if (jacobV) {
+      jacobV.loop = false;
+      jacobV.addEventListener("timeupdate", function() {
+        if (jacobV.currentTime >= 20) {
+          jacobV.currentTime = 10;
+          jacobV.play().catch(()=>{});
+        }
+      });
+      jacobV.addEventListener("loadedmetadata", function() {
+        jacobV.currentTime = 10;
+        jacobV.play().catch(()=>{});
+      });
+      if (jacobV.readyState >= 1) {
+        jacobV.currentTime = 10;
+        jacobV.play().catch(()=>{});
+      }
+    }
+  })();
+</script>
+</body>
+</html>

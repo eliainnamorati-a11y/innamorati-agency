@@ -88,7 +88,7 @@ body, html {
   text-decoration: none; 
   transition: opacity 0.4s ease, filter 0.4s ease; 
   text-transform: uppercase; 
-  font-size: 0.71rem; 
+  font-size: 0.82rem; 
   font-weight: 500; 
   letter-spacing: 1.5px; 
   opacity: 0.8; 
@@ -2821,4 +2821,26 @@ h2.ambition-text {
 @keyframes videoSwap3_3 {
   0%, 66.65% { opacity: 0; }
   66.66%, 100% { opacity: 1; }
+}
+
+/* ==================================
+   Dark Background Overrides
+   ================================== */
+.navbar-pill.navbar-dark-img {
+  mix-blend-mode: normal !important;
+  color: white !important;
+}
+.navbar-pill.navbar-dark-img .logo img {
+  filter: invert(1) !important;
+}
+.navbar-pill.navbar-dark-img .nav-links li a,
+.navbar-pill.navbar-dark-img .hamburger span {
+  color: white !important;
+  opacity: 0.9 !important;
+}
+
+/* Ensure white text on dark backgrounds is clearer */
+.bg-dark .label-muted,
+[style*="background-color: var(--bg-dark)"] .label-muted {
+  color: rgba(255, 255, 255, 0.9) !important;
 }

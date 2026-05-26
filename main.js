@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
           // Mouse push distortion (extremely subtle)
           vec2 mouse = vec2(u_mouse.x, u_mouse.y);
           float dist = distance(vUv, mouse);
-          float distortion = smoothstep(0.4, 0.0, dist) * 0.01;
+          float distortion = smoothstep(0.5, 0.0, dist) * 0.05;
 
           // Almost imperceptible domain warp to make the image breathe slowly
           float t = u_time * 0.015;

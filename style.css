@@ -2194,11 +2194,11 @@ h2.ambition-text {
 
 .industry-hero-label {
   font-family: var(--font-sans);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #fff;
-  opacity: 0.3;
+  opacity: 0.9;
 }
 
 .industry-hero-bottom {

@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const context = canvas.getContext('2d');
   
-  // Set up array for 90 frames
-  const frameCount = 90;
+  // Set up array for 150 frames
+  const frameCount = 150;
   const images = [];
   
   // Object to track loading state
@@ -45,9 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Preload images
   for (let i = 1; i <= frameCount; i++) {
     const img = new Image();
-    // Zero-pad the index: 001 to 090
+    // Zero-pad the index: 001 to 150
     const paddedIndex = i.toString().padStart(3, '0');
-    img.src = `about/WATCH/ezgif-frame-${paddedIndex}.jpg`;
+    img.src = `WATCH ANIMATION/ezgif-frame-${paddedIndex}.jpg`;
     
     img.onload = () => {
       imageLoaded[i - 1] = true;

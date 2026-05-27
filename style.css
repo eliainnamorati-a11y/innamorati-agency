@@ -936,6 +936,8 @@ h2.ambition-text {
 .pathways-visuals .pathway-shape-container:nth-child(2) { z-index: 2; }
 .pathways-visuals .pathway-shape-container:nth-child(3) { z-index: 3; }
 .pathways-visuals .pathway-shape-container:nth-child(4) { z-index: 4; }
+.pathways-visuals .pathway-shape-container:nth-child(5) { z-index: 5; }
+.pathways-visuals .pathway-shape-container:nth-child(6) { z-index: 6; }
 
 /* Active shape is visible */
 .pathways-visuals .pathway-shape-container.active {

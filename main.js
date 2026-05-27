@@ -600,7 +600,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (rrCanvas && expansionBlock) {
     const context = rrCanvas.getContext('2d');
-    const frameCount = 15;
+    const frameCount = 90;
     const images = [];
     const imageLoaded = new Array(frameCount).fill(false);
     let firstFrameLoaded = false;
@@ -632,7 +632,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 1; i <= frameCount; i++) {
       const img = new Image();
       const paddedIndex = i.toString().padStart(3, '0');
-      img.src = `about/rolls royce video/ezgif-frame-${paddedIndex}.jpg`;
+      img.src = `about/ezgif-89f43e9731ee7eb7-jpg/ezgif-frame-${paddedIndex}.jpg`;
       img.onload = () => {
         imageLoaded[i - 1] = true;
         if (i === 1) {

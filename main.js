@@ -616,7 +616,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const nw = iw * r;
       const nh = ih * r;
       const cx = (w - nw) / 2;
-      const cy = (h - nh) / 2;
+      // Shift video up by aligning to the bottom (1.0) instead of center (0.5)
+      const verticalOffset = 1.0; 
+      const cy = (h - nh) * verticalOffset;
       ctx.clearRect(0, 0, w, h);
       ctx.drawImage(img, cx, cy, nw, nh);
     }

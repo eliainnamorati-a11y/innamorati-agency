@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const context = canvas.getContext('2d');
   
-  // Set up array for 240 frames
-  const frameCount = 240;
+  // Set up array for 90 frames
+  const frameCount = 90;
   const images = [];
   
   // Object to track loading state
@@ -14,8 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Resize canvas to fill the screen
   function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = window.innerWidth * dpr;
+    canvas.height = window.innerHeight * dpr;
     renderCurrentFrame();
   }
   window.addEventListener('resize', resizeCanvas);
@@ -44,9 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Preload images
   for (let i = 1; i <= frameCount; i++) {
     const img = new Image();
-    // Zero-pad the index: 001 to 240
+    // Zero-pad the index: 001 to 090
     const paddedIndex = i.toString().padStart(3, '0');
-    img.src = `ezgif-7757ef814a69e15f-jpg/ezgif-frame-${paddedIndex}.jpg`;
+    img.src = `about/WATCH/ezgif-frame-${paddedIndex}.jpg`;
     
     img.onload = () => {
       imageLoaded[i - 1] = true;
@@ -59,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Scroll logic with Lerp (Momentum)
-  const startFrame = 100;
+  const startFrame = 0;
   let currentFrame = startFrame;
   let targetFrame = startFrame;
 

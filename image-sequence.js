@@ -38,6 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const cx = (w - nw) / 2;
     const cy = (h - nh) / 2;
     
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+    
     ctx.clearRect(0, 0, w, h);
     ctx.drawImage(img, cx, cy, nw, nh);
   }
@@ -86,15 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
     currentFrame += (targetFrame - currentFrame) * 0.08;
     
     renderCurrentFrame();
-    
-    // Fade the hero text out quickly as the animation starts (complete fade by 15% progress)
-    const fadeText = document.getElementById('hero-fade-text');
-    if (fadeText) {
-      // Calculate progress equivalent from the current frame (so it matches momentum)
-      const currentProgress = (currentFrame - startFrame) / (frameCount - 1 - startFrame);
-      const textOpacity = Math.max(0, 1 - (currentProgress / 0.15));
-      fadeText.style.opacity = textOpacity;
-    }
     
     requestAnimationFrame(render);
   }

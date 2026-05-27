@@ -1184,8 +1184,11 @@ h2.ambition-text {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
 }
-.grid-card, .industry-card, .insight-card {
+.grid-card, .industry-card, .insight-card, .new-work-item {
   cursor: none;
+}
+.new-work-item .hover-btn {
+  display: none !important;
 }
 
 /* ==================================

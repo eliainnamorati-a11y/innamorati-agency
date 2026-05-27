@@ -299,7 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   // --- Custom Blur Cursor for Multiple Sections ---
-  const hoverCards = document.querySelectorAll('.grid-card, .industry-card, .insight-card');
+  const hoverCards = document.querySelectorAll('.grid-card, .industry-card, .insight-card, .new-work-item');
   if (hoverCards.length > 0) {
     const customCursor = document.createElement('div');
     customCursor.id = 'custom-blur-cursor';

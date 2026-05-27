@@ -522,8 +522,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function resizeCanvas() {
       // Use parent container size
       const parent = watchCanvas.parentElement;
-      watchCanvas.width = parent.clientWidth;
-      watchCanvas.height = parent.clientHeight;
+      const dpr = window.devicePixelRatio || 1;
+      watchCanvas.width = parent.clientWidth * dpr;
+      watchCanvas.height = parent.clientHeight * dpr;
       renderCurrentFrame();
     }
     window.addEventListener('resize', resizeCanvas);
@@ -625,8 +626,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function resizeCanvasRR() {
       const parent = rrCanvas.parentElement;
-      rrCanvas.width = parent.clientWidth;
-      rrCanvas.height = parent.clientHeight;
+      const dpr = window.devicePixelRatio || 1;
+      rrCanvas.width = parent.clientWidth * dpr;
+      rrCanvas.height = parent.clientHeight * dpr;
       renderCurrentFrameRR();
     }
     window.addEventListener('resize', resizeCanvasRR);
@@ -717,8 +719,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function resizeCanvasMarketing() {
       const parent = marketingCanvas.parentElement;
-      marketingCanvas.width = parent.clientWidth;
-      marketingCanvas.height = parent.clientHeight;
+      const dpr = window.devicePixelRatio || 1;
+      marketingCanvas.width = parent.clientWidth * dpr;
+      marketingCanvas.height = parent.clientHeight * dpr;
       renderCurrentFrameMarketing();
     }
     window.addEventListener('resize', resizeCanvasMarketing);
@@ -810,8 +813,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function resizeCanvasWD() {
       const parent = wdCanvas.parentElement;
-      wdCanvas.width = parent.clientWidth;
-      wdCanvas.height = parent.clientHeight;
+      const dpr = window.devicePixelRatio || 1;
+      wdCanvas.width = parent.clientWidth * dpr;
+      wdCanvas.height = parent.clientHeight * dpr;
       renderCurrentFrameWD();
     }
     window.addEventListener('resize', resizeCanvasWD);

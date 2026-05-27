@@ -240,7 +240,7 @@ body, html {
   opacity: 0.8;
 }
 @media (max-width: 768px) {
-  .hero-center-text h1 { font-size: 11.2vw; }
+  .hero-center-text h1 { font-size: 9vw; }
   .hero-bottom-text p { font-size: 1rem; }
 }
 

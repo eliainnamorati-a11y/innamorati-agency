@@ -687,6 +687,99 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
+  // WEBSITE DESIGN IMAGE SEQUENCE (SCROLL SCRUBBING)
+  // ==========================================
+  const wdCanvas = document.getElementById('web-design-canvas');
+  const wdBlock = document.querySelector('.pathway-content-block[data-visual="visual-web-design"]');
+  
+  if (wdCanvas && wdBlock) {
+    const context = wdCanvas.getContext('2d');
+    const frameCount = 60;
+    const images = [];
+    const imageLoaded = new Array(frameCount).fill(false);
+    let firstFrameLoaded = false;
+    let currentFrame = 0;
+    let targetFrame = 0;
+
+    function drawImagePropLocalWD(ctx, img) {
+      const w = ctx.canvas.width;
+      const h = ctx.canvas.height;
+      const iw = img.width;
+      const ih = img.height;
+      const r = Math.max(w / iw, h / ih);
+      const nw = iw * r;
+      const nh = ih * r;
+      const cx = (w - nw) / 2;
+      const verticalOffset = 0.5; // center
+      const cy = (h - nh) * verticalOffset;
+      ctx.clearRect(0, 0, w, h);
+      ctx.drawImage(img, cx, cy, nw, nh);
+    }
+
+    function resizeCanvasWD() {
+      const parent = wdCanvas.parentElement;
+      wdCanvas.width = parent.clientWidth;
+      wdCanvas.height = parent.clientHeight;
+      renderCurrentFrameWD();
+    }
+    window.addEventListener('resize', resizeCanvasWD);
+    
+    for (let i = 1; i <= frameCount; i++) {
+      const img = new Image();
+      const paddedIndex = i.toString().padStart(3, '0');
+      img.src = `about/WEBSITE DESIGN/ezgif-frame-${paddedIndex}.jpg`;
+      img.onload = () => {
+        imageLoaded[i - 1] = true;
+        if (i === 1) {
+          firstFrameLoaded = true;
+          resizeCanvasWD();
+        }
+      };
+      images.push(img);
+    }
+
+    window.addEventListener('scroll', () => {
+      const rect = wdBlock.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      const scrollDistance = windowHeight + rect.height;
+      let progress = (windowHeight - rect.top) / scrollDistance;
+      progress = Math.max(0, Math.min(progress, 1));
+      
+      targetFrame = progress * (frameCount - 1);
+    }, { passive: true });
+
+    function renderCurrentFrameWD() {
+      if (!firstFrameLoaded) return;
+      
+      const index = Math.round(currentFrame);
+      const safeIndex = Math.max(0, Math.min(index, frameCount - 1));
+      
+      if (imageLoaded[safeIndex]) {
+        drawImagePropLocalWD(context, images[safeIndex]);
+      } else {
+        for (let i = safeIndex; i >= 0; i--) {
+          if (imageLoaded[i]) {
+            drawImagePropLocalWD(context, images[i]);
+            break;
+          }
+        }
+      }
+    }
+
+    function renderWD() {
+      currentFrame += (targetFrame - currentFrame) * 0.1;
+      if (Math.abs(targetFrame - currentFrame) > 0.01) {
+        renderCurrentFrameWD();
+      }
+      requestAnimationFrame(renderWD);
+    }
+    
+    setTimeout(resizeCanvasWD, 100);
+    renderWD();
+  }
+
+  // ==========================================
   // NORDEX FOCAL ROW ANIMATION
   // ==========================================
   const teamSection = document.getElementById('team-section');

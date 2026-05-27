@@ -593,6 +593,98 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
+  // ROLLS ROYCE IMAGE SEQUENCE (SCROLL SCRUBBING)
+  // ==========================================
+  const rrCanvas = document.getElementById('rr-canvas');
+  const expansionBlock = document.querySelector('.pathway-content-block[data-visual="visual-expansion"]');
+  
+  if (rrCanvas && expansionBlock) {
+    const context = rrCanvas.getContext('2d');
+    const frameCount = 15;
+    const images = [];
+    const imageLoaded = new Array(frameCount).fill(false);
+    let firstFrameLoaded = false;
+    let currentFrame = 0;
+    let targetFrame = 0;
+
+    function drawImagePropLocal(ctx, img) {
+      const w = ctx.canvas.width;
+      const h = ctx.canvas.height;
+      const iw = img.width;
+      const ih = img.height;
+      const r = Math.max(w / iw, h / ih);
+      const nw = iw * r;
+      const nh = ih * r;
+      const cx = (w - nw) / 2;
+      const cy = (h - nh) / 2;
+      ctx.clearRect(0, 0, w, h);
+      ctx.drawImage(img, cx, cy, nw, nh);
+    }
+
+    function resizeCanvasRR() {
+      const parent = rrCanvas.parentElement;
+      rrCanvas.width = parent.clientWidth;
+      rrCanvas.height = parent.clientHeight;
+      renderCurrentFrameRR();
+    }
+    window.addEventListener('resize', resizeCanvasRR);
+    
+    for (let i = 1; i <= frameCount; i++) {
+      const img = new Image();
+      const paddedIndex = i.toString().padStart(3, '0');
+      img.src = `about/rolls royce video/ezgif-frame-${paddedIndex}.jpg`;
+      img.onload = () => {
+        imageLoaded[i - 1] = true;
+        if (i === 1) {
+          firstFrameLoaded = true;
+          resizeCanvasRR();
+        }
+      };
+      images.push(img);
+    }
+
+    window.addEventListener('scroll', () => {
+      const rect = expansionBlock.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      const scrollDistance = windowHeight + rect.height;
+      let progress = (windowHeight - rect.top) / scrollDistance;
+      progress = Math.max(0, Math.min(progress, 1));
+      
+      targetFrame = progress * (frameCount - 1);
+    }, { passive: true });
+
+    function renderCurrentFrameRR() {
+      if (!firstFrameLoaded) return;
+      
+      const index = Math.round(currentFrame);
+      const safeIndex = Math.max(0, Math.min(index, frameCount - 1));
+      
+      if (imageLoaded[safeIndex]) {
+        drawImagePropLocal(context, images[safeIndex]);
+      } else {
+        for (let i = safeIndex; i >= 0; i--) {
+          if (imageLoaded[i]) {
+            drawImagePropLocal(context, images[i]);
+            break;
+          }
+        }
+      }
+    }
+
+    function renderRR() {
+      currentFrame += (targetFrame - currentFrame) * 0.1;
+      if (Math.abs(targetFrame - currentFrame) > 0.01) {
+        renderCurrentFrameRR();
+      }
+      requestAnimationFrame(renderRR);
+    }
+    
+    setTimeout(resizeCanvasRR, 100);
+    renderRR();
+  }
+
+  // ==========================================
   // NORDEX FOCAL ROW ANIMATION
   // ==========================================
   const teamSection = document.getElementById('team-section');

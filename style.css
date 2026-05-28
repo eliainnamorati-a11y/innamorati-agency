@@ -877,25 +877,11 @@ h2.ambition-text {
 
 @media (max-width: 768px) {
   .insights-row {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    gap: 5vw;
-    width: 100%;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    padding-bottom: 1rem;
-  }
-  .insights-row::-webkit-scrollbar {
-    display: none;
+    flex-direction: column;
+    gap: 30px;
   }
   .insight-card {
-    min-width: 85vw;
-    width: 85vw;
-    scroll-snap-align: start;
-    flex-shrink: 0;
+    width: 100%;
   }
 }
 
@@ -2736,86 +2722,21 @@ h2.ambition-text {
 }
 
 @media (max-width: 992px) {
-  .footer-complex {
-    position: relative;
-    padding-bottom: 2rem;
-  }
   .footer-main {
-    flex-direction: column-reverse;
-    gap: 2rem;
+    flex-direction: column;
   }
-  .footer-right {
-    width: 100%;
-    border-bottom: 1px solid rgba(255,255,255,0.15);
-    padding-bottom: 1.5rem;
-  }
-  .footer-right .footer-label {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    margin: 0;
-  }
-  .footer-right .footer-label::after {
-    content: '+';
-    font-size: 1.5rem;
-    font-weight: 300;
-  }
-  .footer-right.active .footer-label::after {
-    content: '−';
-  }
-  .footer-form {
-    display: none;
-    margin-top: 1.5rem;
-  }
-  .footer-right.active .footer-form {
-    display: block;
-  }
-  
   .footer-grid-2 {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr;
   }
-  .footer-col {
-    margin-bottom: 0;
-  }
-  
   .footer-bottom-bar {
     flex-direction: column;
-    border-top: none;
-    margin-top: 2rem;
-    padding-top: 0;
+    gap: 20px;
+    text-align: center;
   }
-  .footer-bar-center {
-    display: none;
-  }
-  .footer-bar-right {
-    width: 100%;
-    text-align: left;
-    margin-bottom: 1rem;
-  }
-  .footer-brand {
-    font-size: 2.5rem;
-  }
-  .footer-bar-left {
-    position: absolute;
-    bottom: 2rem;
-    right: 5vw;
-    font-size: 0.6rem;
-    color: rgba(255,255,255,0.4);
-  }
-  
   .footer-legal {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-    text-align: left;
-    border-top: 1px solid rgba(255,255,255,0.15);
-    padding-top: 2rem;
-    width: 100%;
-  }
-  .legal-left {
-    line-height: 1.5;
+    gap: 10px;
+    text-align: center;
   }
 }
 

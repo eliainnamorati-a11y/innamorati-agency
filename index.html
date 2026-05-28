@@ -56,6 +56,14 @@
       <div class="industries-header reveal-up">
         <div class="industries-label">AREAS OF FOCUS</div>
         <h2 class="industries-intro">Working at the intersection of strategy & creativity, developing high-growth corporate brands that not only lead today but inspire the possibilities of tomorrow.</h2>
+        <div class="industries-arrows">
+          <button class="industries-arrow" onclick="document.getElementById('industries-track').scrollBy({left: -window.innerWidth * 0.85, behavior: 'smooth'})" aria-label="Previous">
+            <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="industries-arrow" onclick="document.getElementById('industries-track').scrollBy({left: window.innerWidth * 0.85, behavior: 'smooth'})" aria-label="Next">
+            <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
       </div>
       
       <div class="industries-track reveal-fade delay-1" id="industries-track">

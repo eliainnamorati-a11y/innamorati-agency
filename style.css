@@ -598,9 +598,75 @@ h2.ambition-text {
   }
 }
 
+.industries-arrows {
+  display: none;
+}
+
 @media (max-width: 768px) {
+  .industries-section {
+    height: auto !important; 
+    padding: 10vh 0;
+  }
+  .industries-sticky-wrapper {
+    position: relative;
+    height: auto;
+    overflow: hidden;
+    padding: 0;
+  }
+  .industries-header {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 5vw;
+  }
+  .industries-label {
+    flex: none;
+  }
+  .industries-intro {
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+  .industries-arrows {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  .industries-arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: transparent;
+    cursor: pointer;
+  }
+  .industries-arrow svg {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+  }
+  .industries-track {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 5vw;
+    padding: 0 5vw;
+    width: 100%;
+    transform: none !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .industries-track::-webkit-scrollbar {
+    display: none;
+  }
   .industry-card {
     min-width: 85vw;
+    width: 85vw;
+    scroll-snap-align: start;
   }
 }
 

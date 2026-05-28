@@ -952,7 +952,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // AWARDS HOVER INTERACTION (Removed as requested)
+  // EXPERTISE MOBILE ACCORDION
   // ==========================================
+  const expertiseCols = document.querySelectorAll('.expertise-col');
+  expertiseCols.forEach(col => {
+    col.addEventListener('click', () => {
+      // Only toggle if we are in mobile view (where p is hidden or has specific styling)
+      if (window.innerWidth <= 992) {
+        // Optional: close others
+        // expertiseCols.forEach(c => { if (c !== col) c.classList.remove('active'); });
+        col.classList.toggle('active');
+      }
+    });
+  });
 
 });

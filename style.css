@@ -875,6 +875,30 @@ h2.ambition-text {
 .insight-card h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 5px; }
 .insight-card p { font-size: 0.85rem; opacity: 0.6; }
 
+@media (max-width: 768px) {
+  .insights-row {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 5vw;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-bottom: 1rem;
+  }
+  .insights-row::-webkit-scrollbar {
+    display: none;
+  }
+  .insight-card {
+    min-width: 85vw;
+    width: 85vw;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+}
+
 /* ==================================
    Editorial Blue Footer (Site-wide)
    ================================== */
@@ -2712,21 +2736,86 @@ h2.ambition-text {
 }
 
 @media (max-width: 992px) {
+  .footer-complex {
+    position: relative;
+    padding-bottom: 2rem;
+  }
   .footer-main {
-    flex-direction: column;
+    flex-direction: column-reverse;
+    gap: 2rem;
   }
+  .footer-right {
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    padding-bottom: 1.5rem;
+  }
+  .footer-right .footer-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin: 0;
+  }
+  .footer-right .footer-label::after {
+    content: '+';
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+  .footer-right.active .footer-label::after {
+    content: '−';
+  }
+  .footer-form {
+    display: none;
+    margin-top: 1.5rem;
+  }
+  .footer-right.active .footer-form {
+    display: block;
+  }
+  
   .footer-grid-2 {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
   }
+  .footer-col {
+    margin-bottom: 0;
+  }
+  
   .footer-bottom-bar {
     flex-direction: column;
-    gap: 20px;
-    text-align: center;
+    border-top: none;
+    margin-top: 2rem;
+    padding-top: 0;
   }
+  .footer-bar-center {
+    display: none;
+  }
+  .footer-bar-right {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+  .footer-brand {
+    font-size: 2.5rem;
+  }
+  .footer-bar-left {
+    position: absolute;
+    bottom: 2rem;
+    right: 5vw;
+    font-size: 0.6rem;
+    color: rgba(255,255,255,0.4);
+  }
+  
   .footer-legal {
     flex-direction: column;
-    gap: 10px;
-    text-align: center;
+    align-items: flex-start;
+    gap: 1.5rem;
+    text-align: left;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 2rem;
+    width: 100%;
+  }
+  .legal-left {
+    line-height: 1.5;
   }
 }
 

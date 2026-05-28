@@ -964,6 +964,20 @@ document.addEventListener('DOMContentLoaded', () => {
         col.classList.toggle('active');
       }
     });
+    });
   });
+
+  // ==========================================
+  // FOOTER MOBILE ACCORDION
+  // ==========================================
+  const footerRight = document.querySelector('.footer-right');
+  const footerLabel = document.querySelector('.footer-right .footer-label');
+  if (footerRight && footerLabel) {
+    footerLabel.addEventListener('click', () => {
+      if (window.innerWidth <= 992) {
+        footerRight.classList.toggle('active');
+      }
+    });
+  }
 
 });

@@ -2734,20 +2734,80 @@ h2.ambition-text {
 
 @media (max-width: 992px) {
   .footer-main {
-    flex-direction: column;
+    flex-direction: column-reverse;
+    gap: 4rem;
+  }
+  .footer-right .footer-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+  .footer-right .footer-label::after {
+    content: '+';
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+  }
+  .footer-right.active .footer-label::after {
+    content: '−';
+  }
+  .footer-form {
+    display: none;
+  }
+  .footer-right.active .footer-form {
+    display: block;
+    margin-top: 1rem;
   }
   .footer-grid-2 {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 1rem;
+  }
+  .footer-col p {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
   }
   .footer-bottom-bar {
     flex-direction: column;
-    gap: 20px;
-    text-align: center;
+    text-align: left;
+    align-items: flex-start;
+    border-top: none;
+    margin-top: 3rem;
+  }
+  .footer-bar-center {
+    display: none;
+  }
+  .footer-bar-right {
+    order: -1;
+    margin-bottom: 2rem;
+  }
+  .footer-brand {
+    font-size: 2.2rem;
+    font-weight: 300;
+    font-family: var(--font-serif);
+    font-style: italic;
   }
   .footer-legal {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: left;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 2rem;
+    margin-top: 1rem;
+  }
+  .footer-legal .legal-left {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+  .footer-bar-left {
+    order: 2;
+    font-size: 0.6rem;
+    opacity: 0.4;
   }
 }
 

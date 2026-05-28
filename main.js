@@ -957,25 +957,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const expertiseCols = document.querySelectorAll('.expertise-col');
   expertiseCols.forEach(col => {
     col.addEventListener('click', () => {
-      // Only toggle if we are in mobile view (where p is hidden or has specific styling)
+      // Only toggle if we are in mobile view
       if (window.innerWidth <= 992) {
-        // Optional: close others
-        // expertiseCols.forEach(c => { if (c !== col) c.classList.remove('active'); });
         col.classList.toggle('active');
       }
-    });
     });
   });
 
   // ==========================================
-  // FOOTER MOBILE ACCORDION
+  // FOOTER MOBILE ACCORDION (GET IN TOUCH)
   // ==========================================
-  const footerRight = document.querySelector('.footer-right');
-  const footerLabel = document.querySelector('.footer-right .footer-label');
-  if (footerRight && footerLabel) {
-    footerLabel.addEventListener('click', () => {
+  const footerContact = document.querySelector('.footer-right .footer-label');
+  if (footerContact) {
+    footerContact.addEventListener('click', () => {
       if (window.innerWidth <= 992) {
-        footerRight.classList.toggle('active');
+        footerContact.parentElement.classList.toggle('active');
       }
     });
   }

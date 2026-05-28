@@ -585,12 +585,21 @@ h2.ambition-text {
 }
 
 @media (max-width: 992px) {
+  .expertise-section {
+    height: auto !important;
+  }
+  .expertise-sticky-wrapper {
+    height: auto !important;
+    position: relative !important;
+    overflow: visible !important;
+    padding: 10vw 5vw 15vw;
+  }
   .expertise-grid {
     display: flex;
     flex-direction: column;
     gap: 0;
     border-top: 1px solid rgba(255,255,255,0.15);
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
   .expertise-v-line {
     display: none;
@@ -606,6 +615,8 @@ h2.ambition-text {
     flex-direction: column;
     cursor: pointer;
     transition: all 0.3s ease;
+    transform: none !important;
+    opacity: 1 !important;
   }
   .expertise-col p {
     display: none;

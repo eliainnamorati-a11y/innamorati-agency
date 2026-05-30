@@ -672,7 +672,7 @@ h2.ambition-text {
     display: block !important;
     bottom: 0 !important;
   }
-  .block-text-massive, .block-text-massive.pt-small, .project-hero {
+  .block-text-massive, .block-text-massive.pt-small, .project-hero, .hero-approach {
     padding-top: 20vh !important;
   }
   .label-muted {

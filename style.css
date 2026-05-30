@@ -656,7 +656,7 @@ h2.ambition-text {
 
 @media (max-width: 768px) {
   #industries-progress-bar {
-    display: none !important;
+    display: block !important;
   }
   .industries-section {
     height: auto !important; 
@@ -666,7 +666,7 @@ h2.ambition-text {
     position: relative;
     height: auto;
     overflow: hidden;
-    padding: 0;
+    padding: 0 0 3rem 0;
   }
   .industries-header {
     flex-direction: column;

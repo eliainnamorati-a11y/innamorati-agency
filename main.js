@@ -420,20 +420,31 @@ document.addEventListener('DOMContentLoaded', () => {
       // Calculate how far we've scrolled into the section.
       const scrollDistance = rect.height - windowHeight;
       
-      // progress is 0 when rect.top == 0. progress is 1 when rect.top == -scrollDistance
-      let progress = -rect.top / scrollDistance;
-      progress = Math.max(0, Math.min(progress, 1));
-      targetProgress = progress;
-      
-      // Calculate max translation required
-      const maxTranslate = industriesTrack.scrollWidth - window.innerWidth + (window.innerWidth * 0.1);
-      
-      // If the content is wider than the screen, set target translation
-      if (maxTranslate > 0) {
-        if (rect.top <= 0) {
-          targetX = -(progress * maxTranslate);
-        } else {
-          targetX = 0;
+      // On desktop, vertical scroll controls progress. On mobile, horizontal scroll does.
+      if (window.innerWidth > 768) {
+        let progress = -rect.top / scrollDistance;
+        progress = Math.max(0, Math.min(progress, 1));
+        targetProgress = progress;
+        
+        // Calculate max translation required
+        const maxTranslate = industriesTrack.scrollWidth - window.innerWidth + (window.innerWidth * 0.1);
+        
+        // If the content is wider than the screen, set target translation
+        if (maxTranslate > 0) {
+          if (rect.top <= 0) {
+            targetX = -(progress * maxTranslate);
+          } else {
+            targetX = 0;
+          }
+        }
+      }
+    }, { passive: true });
+    
+    industriesTrack.addEventListener('scroll', () => {
+      if (window.innerWidth <= 768) {
+        const maxScroll = industriesTrack.scrollWidth - industriesTrack.clientWidth;
+        if (maxScroll > 0) {
+          targetProgress = industriesTrack.scrollLeft / maxScroll;
         }
       }
     }, { passive: true });

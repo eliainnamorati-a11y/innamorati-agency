@@ -344,8 +344,8 @@ body, html {
 }
 .block-text-massive.pt-small { padding-top: 6vw; }
 .label-muted {
-  font-family: var(--font-sans); font-size: 0.8rem; text-transform: uppercase;
-  letter-spacing: 0.1em; opacity: 0.3; display: block; margin-bottom: 2rem; font-weight: 600;
+  font-family: var(--font-sans); font-size: 0.65rem; text-transform: uppercase;
+  letter-spacing: 0.1em; opacity: 0.6; display: block; margin-bottom: 2rem; font-weight: 300;
 }
 h2.ambition-text {
   font-family: var(--font-serif);
@@ -357,6 +357,16 @@ h2.ambition-text {
   background: rgba(0,0,0,0.05); color: var(--text-dark); font-size: 0.85rem;
   font-weight: 500; text-decoration: none; transition: 0.2s;
   float: right; margin-top: -30px;
+}
+@media (max-width: 768px) {
+  .button-pill {
+    float: none;
+    margin-top: 1.5rem;
+    display: inline-block;
+  }
+  h2.ambition-text {
+    font-size: 1.4rem !important;
+  }
 }
 .button-pill:hover { background: rgba(0,0,0,0.1); }
 
@@ -601,12 +611,15 @@ h2.ambition-text {
     border-top: 1px solid rgba(255,255,255,0.15);
     margin-top: 3rem;
   }
-  .expertise-v-line {
+  .expertise-v-line, .expertise-h-line {
     display: none;
   }
   .expertise-top {
     flex-direction: column;
     gap: 2rem;
+  }
+  .expertise-label {
+    flex: auto;
   }
   .expertise-col {
     padding: 1.5rem 0;

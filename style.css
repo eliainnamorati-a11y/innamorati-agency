@@ -616,7 +616,7 @@ h2.ambition-text {
   }
   .expertise-top {
     flex-direction: column;
-    gap: 2rem;
+    gap: 20px;
   }
   .expertise-label {
     flex: auto;
@@ -674,6 +674,9 @@ h2.ambition-text {
   }
   .block-text-massive.pt-small {
     padding-top: 10vh !important;
+  }
+  .label-muted {
+    margin-bottom: 20px !important;
   }
   .industries-section {
     height: auto !important; 

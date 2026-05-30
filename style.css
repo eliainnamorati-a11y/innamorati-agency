@@ -655,6 +655,9 @@ h2.ambition-text {
 }
 
 @media (max-width: 768px) {
+  #industries-progress-bar {
+    display: none !important;
+  }
   .industries-section {
     height: auto !important; 
     padding: 10vh 0;
@@ -1131,19 +1134,9 @@ h2.ambition-text {
   }
   
   .pathways-visuals {
-    width: 100%;
-    height: 50vh;
-    position: relative;
-    top: auto;
-    padding: 5vw;
+    display: none;
   }
 
-  .pathways-visuals .pathway-shape-container {
-    width: 100%;
-    aspect-ratio: auto;
-    height: 100%;
-  }
-  
   .pathways-text-content {
     width: 100%;
   }
@@ -1157,6 +1150,21 @@ h2.ambition-text {
     left: 0;
     width: 100%;
   }
+
+  /* Style for visual when moved inside text block on mobile */
+  .pathway-content-block .pathway-shape-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    position: relative !important;
+    margin-bottom: 2rem;
+    opacity: 1 !important;
+    visibility: visible !important;
+    clip-path: none !important;
+    -webkit-clip-path: none !important;
+    z-index: 1 !important;
+  }
+
 }
 
 .pathway-lists { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }

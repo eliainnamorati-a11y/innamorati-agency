@@ -228,6 +228,22 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --- Sticky Scroll Pathways System (Wipe Reveal) ---
+  
+  // Mobile DOM Rearrangement for Pathways
+  if (window.innerWidth <= 900) {
+    const blocks = document.querySelectorAll('.pathway-content-block');
+    blocks.forEach(block => {
+      const visualId = block.getAttribute('data-visual');
+      if (visualId) {
+        const visual = document.getElementById(visualId);
+        if (visual) {
+          // Insert the visual at the very beginning of the block
+          block.insertBefore(visual, block.firstChild);
+        }
+      }
+    });
+  }
+
   const pathwayBlocks = document.querySelectorAll('.pathway-content-block');
   const pathwayVisuals = document.querySelectorAll('.pathways-visuals .pathway-shape-container');
 

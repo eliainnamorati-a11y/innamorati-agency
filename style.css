@@ -670,6 +670,10 @@ h2.ambition-text {
 @media (max-width: 768px) {
   #industries-progress-bar {
     display: block !important;
+    bottom: 0 !important;
+  }
+  .block-text-massive.pt-small {
+    padding-top: 10vh !important;
   }
   .industries-section {
     height: auto !important; 
@@ -2795,7 +2799,7 @@ h2.ambition-text {
     flex-direction: column;
     text-align: left;
     align-items: flex-start;
-    border-top: none;
+    border: none !important;
     margin-top: 3rem;
   }
   .footer-bar-center {

@@ -686,8 +686,6 @@ h2.ambition-text {
     display: none !important;
   }
   #strategy-canvas, #design-canvas {
-    filter: contrast(1.1) saturate(1.1) brightness(1.05);
-    image-rendering: high-quality;
   }
   .industries-sticky-wrapper {
     position: relative;

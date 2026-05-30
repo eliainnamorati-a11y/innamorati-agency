@@ -531,8 +531,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const nh = ih * r;
       const cx = (w - nw) / 2;
       const cy = (h - nh) / 2;
-      ctx.imageSmoothingEnabled = true;
-      ctx.imageSmoothingQuality = "high";
       ctx.clearRect(0, 0, w, h);
       ctx.drawImage(img, cx, cy, nw, nh);
     }
@@ -636,15 +634,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const nh = ih * r;
       const cx = (w - nw) / 2;
       const cy = (h - nh) / 2; // centered
-      ctx.imageSmoothingEnabled = true;
-      ctx.imageSmoothingQuality = "high";
       ctx.clearRect(0, 0, w, h);
       ctx.drawImage(img, cx, cy, nw, nh);
     }
 
     function resizeCanvasDesign() {
       const parent = designCanvas.parentElement;
-      const dpr = window.devicePixelRatio || 1;
+      const dpr = 1;
       designCanvas.width = parent.clientWidth * dpr;
       designCanvas.height = parent.clientHeight * dpr;
       renderCurrentFrameDesign();
@@ -723,15 +719,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const nh = ih * r;
       const cx = (w - nw) / 2;
       const cy = (h - nh) / 2;
-      ctx.imageSmoothingEnabled = true;
-      ctx.imageSmoothingQuality = "high";
       ctx.clearRect(0, 0, w, h);
       ctx.drawImage(img, cx, cy, nw, nh);
     }
 
     function resizeCanvasStrategy() {
       const parent = strategyCanvas.parentElement;
-      const dpr = window.devicePixelRatio || 1;
+      const dpr = 1;
       strategyCanvas.width = parent.clientWidth * dpr;
       strategyCanvas.height = parent.clientHeight * dpr;
       renderCurrentFrameStrategy();
@@ -810,8 +804,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const nh = ih * r;
       const cx = (w - nw) / 2;
       const cy = (h - nh) / 2;
-      ctx.imageSmoothingEnabled = true;
-      ctx.imageSmoothingQuality = "high";
       ctx.clearRect(0, 0, w, h);
       ctx.drawImage(img, cx, cy, nw, nh);
     }
@@ -906,8 +898,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const cx = (w - nw) / 2;
       const verticalOffset = 0.5; // center
       const cy = (h - nh) * verticalOffset;
-      ctx.imageSmoothingEnabled = true;
-      ctx.imageSmoothingQuality = "high";
       ctx.clearRect(0, 0, w, h);
       ctx.drawImage(img, cx, cy, nw, nh);
     }

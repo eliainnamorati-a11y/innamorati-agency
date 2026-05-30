@@ -682,6 +682,9 @@ h2.ambition-text {
     height: auto !important; 
     padding: 10vh 0;
   }
+  .services-hero-video {
+    display: none !important;
+  }
   .industries-sticky-wrapper {
     position: relative;
     height: auto;

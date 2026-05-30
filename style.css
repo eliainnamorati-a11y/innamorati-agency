@@ -685,7 +685,9 @@ h2.ambition-text {
   .services-hero-video {
     display: none !important;
   }
-  #strategy-canvas, #design-canvas {
+  #strategy-canvas, #design-canvas, #naming-canvas {
+    filter: contrast(1.1) saturate(1.1) brightness(1.05);
+    image-rendering: high-quality;
   }
   .industries-sticky-wrapper {
     position: relative;

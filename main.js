@@ -506,13 +506,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // WATCH GIF IMAGE SEQUENCE (SCROLL SCRUBBING)
+  // BRAND NAMING & MESSAGING IMAGE SEQUENCE (SCROLL SCRUBBING)
   // ==========================================
-  const websiteCanvas = document.getElementById('website-canvas');
+  const namingCanvas = document.getElementById('naming-canvas');
   const growthBlock = document.querySelector('.pathway-content-block[data-visual="visual-growth"]');
   
-  if (websiteCanvas && growthBlock) {
-    const context = websiteCanvas.getContext('2d');
+  if (namingCanvas && growthBlock) {
+    const context = namingCanvas.getContext('2d');
     const frameCount = 120;
     const images = [];
     const imageLoaded = new Array(frameCount).fill(false);
@@ -520,7 +520,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentFrame = 0;
     let targetFrame = 0;
 
-    function drawImagePropWebsite(ctx, img) {
+    function drawImagePropNaming(ctx, img) {
       const w = ctx.canvas.width;
       const h = ctx.canvas.height;
       const iw = img.width;
@@ -530,18 +530,20 @@ document.addEventListener('DOMContentLoaded', () => {
       const nh = ih * r;
       const cx = (w - nw) / 2;
       const cy = (h - nh) / 2;
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
       ctx.clearRect(0, 0, w, h);
       ctx.drawImage(img, cx, cy, nw, nh);
     }
 
-    function resizeCanvasWebsite() {
-      const parent = websiteCanvas.parentElement;
+    function resizeCanvasNaming() {
+      const parent = namingCanvas.parentElement;
       const dpr = window.devicePixelRatio || 1;
-      websiteCanvas.width = parent.clientWidth * dpr;
-      websiteCanvas.height = parent.clientHeight * dpr;
-      renderCurrentFrameWebsite();
+      namingCanvas.width = parent.clientWidth * dpr;
+      namingCanvas.height = parent.clientHeight * dpr;
+      renderCurrentFrameNaming();
     }
-    window.addEventListener('resize', resizeCanvasWebsite);
+    window.addEventListener('resize', resizeCanvasNaming);
     
     for (let i = 1; i <= frameCount; i++) {
       const img = new Image();
@@ -551,7 +553,7 @@ document.addEventListener('DOMContentLoaded', () => {
         imageLoaded[i - 1] = true;
         if (i === 1) {
           firstFrameLoaded = true;
-          resizeCanvasWebsite();
+          resizeCanvasNaming();
         }
       };
       images.push(img);
@@ -568,100 +570,34 @@ document.addEventListener('DOMContentLoaded', () => {
       targetFrame = progress * (frameCount - 1);
     }, { passive: true });
 
-    function renderCurrentFrameWebsite() {
-      if (!firstFrameLoaded) return;
-      const index = Math.round(currentFrame);
-      const safeIndex = Math.max(0, Math.min(index, frameCount - 1));
-      if (imageLoaded[safeIndex]) drawImagePropWebsite(context, images[safeIndex]);
-      else {
-        for (let i = safeIndex; i >= 0; i--) {
-          if (imageLoaded[i]) { drawImagePropWebsite(context, images[i]); break; }
-        }
-      }
-    }
-
-    function renderWebsite() {
-      currentFrame += (targetFrame - currentFrame) * 0.1;
-      if (Math.abs(targetFrame - currentFrame) > 0.01) {
-        renderCurrentFrameWebsite();
-      }
-      requestAnimationFrame(renderWebsite);
-    }
-    renderWebsite();
-  }
-
-    function resizeCanvas() {
-      // Use parent container size
-      const parent = watchCanvas.parentElement;
-      const dpr = window.devicePixelRatio || 1;
-      watchCanvas.width = parent.clientWidth * dpr;
-      watchCanvas.height = parent.clientHeight * dpr;
-      renderCurrentFrame();
-    }
-    window.addEventListener('resize', resizeCanvas);
-    
-    // Preload images
-    for (let i = 1; i <= frameCount; i++) {
-      const img = new Image();
-      const paddedIndex = i.toString().padStart(3, '0');
-      img.src = `ezgif-7757ef814a69e15f-jpg/ezgif-frame-${paddedIndex}.jpg`;
-      img.onload = () => {
-        imageLoaded[i - 1] = true;
-        if (i === 1) {
-          firstFrameLoaded = true;
-          resizeCanvas(); // Set initial size and render
-        }
-      };
-      images.push(img);
-    }
-
-    window.addEventListener('scroll', () => {
-      const rect = growthBlock.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      
-      // Calculate progress: 0 when block enters from bottom, 1 when it leaves top
-      const scrollDistance = windowHeight + rect.height;
-      let progress = (windowHeight - rect.top) / scrollDistance;
-      
-      // Clamp progress
-      progress = Math.max(0, Math.min(progress, 1));
-      
-      // We want to scrub from frame 80 to the end over this distance
-      const startFrame = 79;
-      targetFrame = startFrame + progress * (frameCount - 1 - startFrame);
-    }, { passive: true });
-
-    function renderCurrentFrame() {
+    function renderCurrentFrameNaming() {
       if (!firstFrameLoaded) return;
       
       const index = Math.round(currentFrame);
       const safeIndex = Math.max(0, Math.min(index, frameCount - 1));
       
       if (imageLoaded[safeIndex]) {
-        drawImageProp(context, images[safeIndex]);
+        drawImagePropNaming(context, images[safeIndex]);
       } else {
-        // Fallback to closest loaded
         for (let i = safeIndex; i >= 0; i--) {
           if (imageLoaded[i]) {
-            drawImageProp(context, images[i]);
+            drawImagePropNaming(context, images[i]);
             break;
           }
         }
       }
     }
 
-    function render() {
-      currentFrame += (targetFrame - currentFrame) * 0.1; // Smooth momentum
-      // Only render if we are moving significantly to save CPU
+    function renderNaming() {
+      currentFrame += (targetFrame - currentFrame) * 0.1;
       if (Math.abs(targetFrame - currentFrame) > 0.01) {
-        renderCurrentFrame();
+        renderCurrentFrameNaming();
       }
-      requestAnimationFrame(render);
+      requestAnimationFrame(renderNaming);
     }
     
-    // Initial size setup
-    setTimeout(resizeCanvas, 100);
-    render();
+    setTimeout(resizeCanvasNaming, 100);
+    renderNaming();
   }
 
   // ==========================================
@@ -689,13 +625,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const nh = ih * r;
       const cx = (w - nw) / 2;
       const cy = (h - nh) / 2; // centered
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
       ctx.clearRect(0, 0, w, h);
       ctx.drawImage(img, cx, cy, nw, nh);
     }
 
     function resizeCanvasDesign() {
       const parent = designCanvas.parentElement;
-      const dpr = 1;
+      const dpr = window.devicePixelRatio || 1;
       designCanvas.width = parent.clientWidth * dpr;
       designCanvas.height = parent.clientHeight * dpr;
       renderCurrentFrameDesign();
@@ -774,13 +712,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const nh = ih * r;
       const cx = (w - nw) / 2;
       const cy = (h - nh) / 2;
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
       ctx.clearRect(0, 0, w, h);
       ctx.drawImage(img, cx, cy, nw, nh);
     }
 
     function resizeCanvasStrategy() {
       const parent = strategyCanvas.parentElement;
-      const dpr = 1;
+      const dpr = window.devicePixelRatio || 1;
       strategyCanvas.width = parent.clientWidth * dpr;
       strategyCanvas.height = parent.clientHeight * dpr;
       renderCurrentFrameStrategy();
@@ -859,6 +799,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const nh = ih * r;
       const cx = (w - nw) / 2;
       const cy = (h - nh) / 2;
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
       ctx.clearRect(0, 0, w, h);
       ctx.drawImage(img, cx, cy, nw, nh);
     }
@@ -953,6 +895,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const cx = (w - nw) / 2;
       const verticalOffset = 0.5; // center
       const cy = (h - nh) * verticalOffset;
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
       ctx.clearRect(0, 0, w, h);
       ctx.drawImage(img, cx, cy, nw, nh);
     }

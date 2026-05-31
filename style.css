@@ -753,7 +753,7 @@ h2.ambition-text {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     gap: 5vw;
-    padding: 0 5vw;
+    padding: 0;
     width: 100%;
     transform: none !important;
     -webkit-overflow-scrolling: touch;
@@ -767,6 +767,12 @@ h2.ambition-text {
     min-width: 85vw;
     width: 85vw;
     scroll-snap-align: start;
+  }
+  .industry-card:first-child {
+    margin-left: 5vw;
+  }
+  .industry-card:last-child {
+    margin-right: 5vw;
   }
   .industry-image {
     margin-bottom: 15px !important;

@@ -673,7 +673,7 @@ h2.ambition-text {
     bottom: 0 !important;
   }
   .block-text-massive, .block-text-massive.pt-small, .project-hero, .hero-approach {
-    padding-top: 20vh !important;
+    padding-top: max(8vh, 50px) !important;
   }
   .label-muted {
     margin-bottom: 20px !important;
@@ -732,7 +732,10 @@ h2.ambition-text {
     stroke-width: 1.5;
   }
   .industries-track {
-    overflow-x: auto;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     gap: 5vw;
@@ -740,6 +743,7 @@ h2.ambition-text {
     width: 100%;
     transform: none !important;
     -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
     scrollbar-width: none;
   }
   .industries-track::-webkit-scrollbar {

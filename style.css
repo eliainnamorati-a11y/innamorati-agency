@@ -3107,3 +3107,27 @@ h2.ambition-text {
 [style*="background-color: var(--bg-dark)"] .label-muted {
   color: rgba(255, 255, 255, 0.9) !important;
 }
+
+/* Contact Grid */
+.contact-images-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2vw;
+}
+
+.contact-image-box {
+  width: 100%;
+  aspect-ratio: 16/10;
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .contact-images-grid {
+    grid-template-columns: 1fr;
+    gap: 4vw;
+  }
+}

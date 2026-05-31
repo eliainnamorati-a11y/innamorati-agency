@@ -732,7 +732,7 @@ h2.ambition-text {
     stroke-width: 1.5;
   }
   .industries-track {
-    overflow-x: auto !important;
+    overflow-x: hidden !important;
     overflow-y: hidden !important;
     display: flex !important;
     flex-wrap: nowrap !important;

@@ -704,17 +704,18 @@ h2.ambition-text {
     flex: none;
   }
   .industries-intro {
-    font-size: 1.4rem;
+    font-size: 1.25rem;
     line-height: 1.4;
   }
   .industries-arrows {
     display: flex;
-    gap: 15px;
-    margin-top: 10px;
+    gap: 10px;
+    margin-top: 25px;
+    margin-bottom: 30px;
   }
   .industries-arrow {
-    width: 44px;
-    height: 44px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     border: 1px solid rgba(255,255,255,0.2);
     display: flex;
@@ -725,8 +726,8 @@ h2.ambition-text {
     cursor: pointer;
   }
   .industries-arrow svg {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     fill: none;
     stroke: currentColor;
     stroke-width: 1.5;
@@ -753,6 +754,17 @@ h2.ambition-text {
     min-width: 85vw;
     width: 85vw;
     scroll-snap-align: start;
+  }
+  .industry-image {
+    margin-bottom: 15px !important;
+  }
+  .industry-title {
+    font-size: 1.5rem !important;
+    margin-bottom: 15px !important;
+  }
+  .industry-desc {
+    font-size: 0.85rem !important;
+    opacity: 0.8 !important;
   }
 }
 

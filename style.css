@@ -2482,6 +2482,42 @@ h2.ambition-text {
   transform: scale(1.05);
 }
 
+.featured-card-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.featured-card:hover .featured-card-overlay {
+  opacity: 1;
+}
+
+.featured-card-btn {
+  font-family: var(--font-sans);
+  color: #fff;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 12px 24px;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 40px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transform: translateY(10px);
+  transition: transform 0.4s ease;
+}
+
+.featured-card:hover .featured-card-btn {
+  transform: translateY(0);
+}
+
 @media (max-width: 992px) {
   .featured-projects-header {
     flex-direction: column;

@@ -1042,6 +1042,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
+  // DISABLE INDUSTRY CARDS ON MOBILE
+  // ==========================================
+  const industryCards = document.querySelectorAll('.industry-card');
+  industryCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+      }
+    });
+  });
+
+  // ==========================================
   // EXPERTISE MOBILE ACCORDION
   // ==========================================
   const expertiseCols = document.querySelectorAll('.expertise-col');

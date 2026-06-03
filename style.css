@@ -677,6 +677,12 @@ h2.ambition-text {
   .studio-hero-text {
     padding-top: 18vh !important;
   }
+  #custom-blur-cursor {
+    display: none !important;
+  }
+  .grid-card, .industry-card, .insight-card, .new-work-item {
+    cursor: pointer !important;
+  }
   .label-muted {
     margin-bottom: 20px !important;
   }
@@ -1740,6 +1746,17 @@ h2.ambition-text {
   transform-origin: left;
   transform: scaleX(0);
   transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.mobile-divider-line {
+  display: none;
+}
+@media (max-width: 768px) {
+  .mobile-divider-line {
+    display: block;
+    height: 1px;
+    background-color: rgba(255,255,255,0.15);
+    margin: 60px 5vw 20px 5vw;
+  }
 }
 .reveal-line.in-view {
   transform: scaleX(1);

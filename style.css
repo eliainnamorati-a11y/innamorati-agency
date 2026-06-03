@@ -3143,7 +3143,7 @@ h2.ambition-text {
 
 /* Contact Grid */
 .contact-images-grid {
-  max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -3152,7 +3152,7 @@ h2.ambition-text {
 
 .contact-image-box {
   width: 100%;
-  aspect-ratio: 16/10;
+  aspect-ratio: 4/3;
   background-size: cover;
   background-position: center;
   border-radius: 4px;

@@ -241,7 +241,7 @@ body, html {
 @media (max-width: 768px) {
   .hero-center-text h1 { font-size: 9vw; }
   .hero-bottom-text p { font-size: 1rem; }
-  .hero-bottom-text { bottom: max(3rem, 8vh); }
+  .hero-bottom-text { bottom: 15vh; padding-bottom: env(safe-area-inset-bottom); }
 }
 
 /* ==================================

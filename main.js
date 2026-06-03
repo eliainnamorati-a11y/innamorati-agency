@@ -1005,20 +1005,20 @@ document.addEventListener('DOMContentLoaded', () => {
           textContainer.style.opacity = Math.max(0, 1 - currentProgress * 1.5);
         }
 
-        // Modern Parallax Reveal (No gimmicky 3D or overlapping)
-        // Center card moves up faster and fades in
-        const centerTranslateY = (1 - currentProgress) * 20; // 20vh to 0vh
-        const sideTranslateY = (1 - currentProgress) * 40; // 40vh to 0vh
+        // Cascade from left to right
+        const leftTranslateY = (1 - currentProgress) * 20;
+        const centerTranslateY = (1 - currentProgress) * 40;
+        const rightTranslateY = (1 - currentProgress) * 60;
         
-        const opacity = Math.min(1, currentProgress * 2); // Fades in quickly
+        const opacity = Math.min(1, currentProgress * 2);
+
+        cardLeft.style.transform = `translateY(${leftTranslateY}vh)`;
+        cardLeft.style.opacity = opacity;
 
         cardCenter.style.transform = `translateY(${centerTranslateY}vh)`;
         cardCenter.style.opacity = opacity;
-
-        cardLeft.style.transform = `translateY(${sideTranslateY}vh)`;
-        cardLeft.style.opacity = opacity;
         
-        cardRight.style.transform = `translateY(${sideTranslateY}vh)`;
+        cardRight.style.transform = `translateY(${rightTranslateY}vh)`;
         cardRight.style.opacity = opacity;
       } else {
         // Reset on mobile

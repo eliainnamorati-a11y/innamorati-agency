@@ -224,14 +224,12 @@ body, html {
 .hero-bottom-text {
   position: absolute;
   bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
   z-index: 10;
   text-align: center;
   color: white;
-  width: 100%;
   padding: 0 5vw;
-  box-sizing: border-box;
   pointer-events: none;
 }
 .hero-bottom-text p {
@@ -243,6 +241,7 @@ body, html {
 @media (max-width: 768px) {
   .hero-center-text h1 { font-size: 9vw; }
   .hero-bottom-text p { font-size: 1rem; }
+  .hero-bottom-text { bottom: max(3rem, 8vh); }
 }
 
 /* ==================================

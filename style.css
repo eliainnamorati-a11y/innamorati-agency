@@ -669,15 +669,7 @@ h2.ambition-text {
 
 @media (max-width: 768px) {
   #industries-progress-bar {
-    display: block !important;
-    position: relative !important;
-    bottom: auto !important;
-    left: 5vw !important;
-    right: 5vw !important;
-    width: 90vw !important;
-    transform: scaleX(1) !important;
-    margin-top: 40px !important;
-    margin-bottom: 0 !important;
+    display: none !important;
   }
   .block-text-massive, .block-text-massive.pt-small, .project-hero, .hero-approach {
     padding-top: 10vh !important;
@@ -767,6 +759,12 @@ h2.ambition-text {
     min-width: 85vw;
     width: 85vw;
     scroll-snap-align: start;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+    user-select: none;
+  }
+  .industry-card img, .industry-card video {
+    pointer-events: none;
   }
   .industry-card:first-child {
     margin-left: 5vw;

@@ -674,6 +674,9 @@ h2.ambition-text {
   .block-text-massive, .block-text-massive.pt-small, .project-hero, .hero-approach {
     padding-top: 10vh !important;
   }
+  .studio-hero-text {
+    padding-top: 18vh !important;
+  }
   .label-muted {
     margin-bottom: 20px !important;
   }
@@ -745,7 +748,8 @@ h2.ambition-text {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     gap: 5vw;
-    padding: 0;
+    padding: 0 5vw !important;
+    scroll-padding-left: 5vw !important;
     width: 100%;
     transform: none !important;
     -webkit-overflow-scrolling: touch;
@@ -767,10 +771,10 @@ h2.ambition-text {
     pointer-events: none;
   }
   .industry-card:first-child {
-    margin-left: 5vw;
+    margin-left: 0;
   }
   .industry-card:last-child {
-    margin-right: 5vw;
+    margin-right: 0;
   }
   .industry-image {
     margin-bottom: 15px !important;

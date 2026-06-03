@@ -234,14 +234,14 @@ body, html {
 }
 .hero-bottom-text p {
   font-size: 1.15rem;
-  max-width: 600px;
+  max-width: 800px;
   margin: 0 auto;
   opacity: 0.8;
 }
 @media (max-width: 768px) {
   .hero-center-text h1 { font-size: 9vw; }
   .hero-bottom-text p { font-size: 1rem; }
-  .hero-bottom-text { bottom: 15vh; padding-bottom: env(safe-area-inset-bottom); }
+  .hero-bottom-text { bottom: 11vh; padding-bottom: env(safe-area-inset-bottom); }
 }
 
 /* ==================================

@@ -1078,4 +1078,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ==========================================
+  // LAZY VIDEO PLAYBACK
+  // ==========================================
+  const lazyVideos = document.querySelectorAll('video[data-lazy-video="true"]');
+  if (lazyVideos.length > 0) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.play().catch(e => console.warn('Lazy video play prevented:', e));
+        } else {
+          entry.target.pause();
+        }
+      });
+    }, {
+      rootMargin: '200px 0px 200px 0px',
+      threshold: 0
+    });
+    
+    lazyVideos.forEach(v => videoObserver.observe(v));
+  }
+
 });

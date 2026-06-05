@@ -47,7 +47,7 @@
   <section class="block-text-massive reveal-up" style="padding-top: max(8vh, 50px) !important;">
     <span class="label-muted">Ambition</span>
     <h2 class="ambition-text blur-reveal">We exist to make the <em>new</em> possible.<br>New clarity. New systems. New futures.</h2>
-    <video src="converted.mp4" autoplay loop muted playsinline style="width: 100%; border-radius: 8px; margin-top: 4rem; margin-bottom: 3rem; box-shadow: 0 20px 50px rgba(0,0,0,0.15);"></video>
+    <video preload="metadata" src="converted.mp4" autoplay loop muted playsinline style="width: 100%; border-radius: 8px; margin-top: 4rem; margin-bottom: 3rem; box-shadow: 0 20px 50px rgba(0,0,0,0.15);"></video>
   </section>
 
   <!-- Industries (Sticky Horizontal Scroll) -->
@@ -70,10 +70,10 @@
       <div class="industries-track reveal-fade delay-1" id="industries-track">
       <a href="finance" class="industry-card reveal-up" style="text-decoration: none; color: inherit; display: block;">
         <div class="industry-image" style="background: none; position: relative; overflow: hidden; transform: translateZ(0);">
-          <video id="letual-v1" autoplay muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1; transition: opacity 0.3s ease;">
+          <video preload="metadata" id="letual-v1" autoplay muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1; transition: opacity 0.3s ease;">
             <source src="le%20tual/1.mp4" type="video/mp4">
           </video>
-          <video id="letual-v2" muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.3s ease;">
+          <video preload="metadata" id="letual-v2" muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.3s ease;">
             <source src="le%20tual/2.mp4" type="video/mp4">
           </video>
         </div>
@@ -83,7 +83,7 @@
 
       <a href="professional" class="industry-card reveal-up delay-1" style="text-decoration: none; color: inherit; display: block;">
         <div class="industry-image" style="background: none; position: relative; overflow: hidden;">
-          <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+          <video preload="metadata" autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
             <source src="silverpine/1.MP4" type="video/mp4">
           </video>
         </div>
@@ -93,7 +93,7 @@
 
       <a href="luxury" class="industry-card reveal-up delay-2" style="text-decoration: none; color: inherit; display: block;">
         <div class="industry-image" style="background: none; position: relative; overflow: hidden; transform: translateZ(0);">
-          <video id="jacob-v" muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+          <video preload="metadata" id="jacob-v" muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
             <source src="Jacob%20and%20co/jacob.mp4#t=10" type="video/mp4">
           </video>
         </div>
@@ -103,13 +103,13 @@
 
       <a href="technology" class="industry-card reveal-up delay-3" style="text-decoration: none; color: inherit; display: block;">
         <div class="industry-image" style="background: none; position: relative; overflow: hidden;">
-          <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; animation: videoSwap3_1 6s infinite;">
+          <video preload="metadata" autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; animation: videoSwap3_1 6s infinite;">
             <source src="hanseatic/1.mp4" type="video/mp4">
           </video>
-          <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; animation: videoSwap3_2 6s infinite;">
+          <video preload="metadata" autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; animation: videoSwap3_2 6s infinite;">
             <source src="hanseatic/2.mp4" type="video/mp4">
           </video>
-          <video autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; animation: videoSwap3_3 6s infinite;">
+          <video preload="metadata" autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; animation: videoSwap3_3 6s infinite;">
             <source src="hanseatic/3.mp4" type="video/mp4">
           </video>
         </div>
@@ -181,7 +181,7 @@
     <!-- Project 1 (Matches col-span-6) -->
     <a href="hanseatic" class="new-work-item item-1 reveal-up">
       <div class="masonry-image-wrapper">
-        <img src="assets/hanseatic-final-4-copy.png" alt="Hanseatic">
+        <img loading="lazy" decoding="async" src="assets/hanseatic-final-4-copy.png" alt="Hanseatic">
         <div class="hover-btn">View Case Study</div>
       </div>
       <div class="masonry-meta">
@@ -201,7 +201,7 @@
     <!-- Project 2 (Matches col-span-5 col-start-8) -->
     <a href="le-tual" class="new-work-item item-2 reveal-up">
       <div class="masonry-image-wrapper">
-        <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
+        <video preload="metadata" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
           <source src="le%20tual/1.mp4" type="video/mp4">
         </video>
         <div class="hover-btn">View Case Study</div>
@@ -220,7 +220,7 @@
     <!-- Project 3 (Matches col-span-12) -->
     <a href="melrose-kitchen" class="new-work-item item-3 reveal-up">
       <div class="masonry-image-wrapper">
-        <img src="assets/High-quality-JPG-Melrose-Kitchen-Decembre-2024-190-scaled.jpg" alt="Melrose Kitchen">
+        <img loading="lazy" decoding="async" src="assets/High-quality-JPG-Melrose-Kitchen-Decembre-2024-190-scaled.jpg" alt="Melrose Kitchen">
         <div class="hover-btn">View Case Study</div>
       </div>
       <div class="masonry-meta">
@@ -238,7 +238,7 @@
     <!-- Project 4 (Matches col-span-6) -->
     <a href="silverpine" class="new-work-item item-1 reveal-up">
       <div class="masonry-image-wrapper">
-        <video autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
+        <video preload="metadata" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover;">
           <source src="silverpine/1.MP4" type="video/mp4">
         </video>
         <div class="hover-btn">View Case Study</div>
@@ -256,7 +256,7 @@
     <!-- Project 5 (Matches col-span-5 col-start-8) -->
     <a href="domaine-de-bellevue" class="new-work-item item-2 reveal-up">
       <div class="masonry-image-wrapper">
-        <img src="assets/image3_final-copy-min.png" alt="Domaine">
+        <img loading="lazy" decoding="async" src="assets/image3_final-copy-min.png" alt="Domaine">
         <div class="hover-btn">View Case Study</div>
       </div>
       <div class="masonry-meta">
@@ -291,7 +291,7 @@
     
     <div class="insights-row" id="home-insights-container">
       <a href="insight-future-of-design" class="insight-card reveal-up delay-1">
-        <img src="676693ce38aa94109fe9795a1751e278d9f6bcc1-3072x2048.webp" class="insight-image" alt="Insight">
+        <img loading="lazy" decoding="async" src="676693ce38aa94109fe9795a1751e278d9f6bcc1-3072x2048.webp" class="insight-image" alt="Insight">
         <h4 style="margin-bottom: 0; line-height: 1.2;">The Future of Design Isn't Design</h4>
         <p style="font-family: var(--font-sans); font-size: 0.85rem; color: #666; margin-top: 0.2rem; margin-bottom: 0; text-transform: uppercase; letter-spacing: 0.05em;">May 31</p>
 

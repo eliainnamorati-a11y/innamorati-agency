@@ -251,6 +251,9 @@ body, html {
   opacity: 0;
   filter: blur(15px);
   transform: translateY(20px);
+}
+
+body.hero-loaded .blur-reveal-load {
   animation: blurAppear 1.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
   /* Add a slight delay so it doesn't run before rendering is ready */
   animation-delay: 0.1s; 

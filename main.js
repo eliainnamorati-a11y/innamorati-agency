@@ -17,7 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Load the exact image from the local folder (or base64 if running locally without a server to avoid CORS)
     const textureLoader = new THREE.TextureLoader();
-    const bgTexture = textureLoader.load(typeof bgBase64 !== 'undefined' ? bgBase64 : 'assets/hero_background.png');
+    const bgTexture = textureLoader.load(
+      typeof bgBase64 !== 'undefined' ? bgBase64 : 'assets/hero_background.png',
+      function() {
+        document.body.classList.add('hero-loaded');
+      }
+    );
     
     const material = new THREE.ShaderMaterial({
       transparent: true,
@@ -199,6 +204,8 @@ document.addEventListener('DOMContentLoaded', () => {
       renderer.render(scene, camera);
     }
     animate();
+  } else {
+    document.body.classList.add('hero-loaded');
   }
 
   const liquidOverlay = document.querySelector('.liquid-overlay');

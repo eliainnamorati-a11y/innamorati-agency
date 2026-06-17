@@ -520,7 +520,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (namingCanvas && growthBlock) {
     const context = namingCanvas.getContext('2d');
-    const frameCount = 48;
+    const frameCount = 42;
     const images = [];
     const imageLoaded = new Array(frameCount).fill(false);
     let firstFrameLoaded = false;
@@ -555,7 +555,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 1; i <= frameCount; i++) {
       const img = new Image();
       const paddedIndex = i.toString().padStart(3, '0');
-      img.src = `about/website/ezgif-frame-${paddedIndex}.jpg`;
+      img.src = `about/brand naming and messaging/ezgif-frame-${paddedIndex}.jpg`;
       img.onload = () => {
         imageLoaded[i - 1] = true;
         if (i === 1) {
@@ -615,7 +615,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (designCanvas && expansionBlock) {
     const context = designCanvas.getContext('2d');
-    const frameCount = 90;
+    const frameCount = 23;
     const images = [];
     const imageLoaded = new Array(frameCount).fill(false);
     let firstFrameLoaded = false;
@@ -650,7 +650,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 1; i <= frameCount; i++) {
       const img = new Image();
       const paddedIndex = i.toString().padStart(3, '0');
-      img.src = `about/chart/ezgif-frame-${paddedIndex}.jpg`;
+      img.src = `about/brand design/ezgif-frame-${paddedIndex}.jpg`;
       img.onload = () => {
         imageLoaded[i - 1] = true;
         if (i === 1) {
@@ -702,7 +702,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (strategyCanvas && creationBlock) {
     const context = strategyCanvas.getContext('2d');
-    const frameCount = 23;
+    const frameCount = 54;
     const images = [];
     const imageLoaded = new Array(frameCount).fill(false);
     let firstFrameLoaded = false;
@@ -737,7 +737,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 1; i <= frameCount; i++) {
       const img = new Image();
       const paddedIndex = i.toString().padStart(3, '0');
-      img.src = `about/logo/ezgif-frame-${paddedIndex}.jpg`;
+      img.src = `about/brand strategy/ezgif-frame-${paddedIndex}.jpg`;
       img.onload = () => {
         imageLoaded[i - 1] = true;
         if (i === 1) {
@@ -789,7 +789,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (marketingCanvas && marketingBlock) {
     const context = marketingCanvas.getContext('2d');
-    const frameCount = 33;
+    const frameCount = 48;
     const images = [];
     const imageLoaded = new Array(frameCount).fill(false);
     let firstFrameLoaded = false;
@@ -824,7 +824,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 1; i <= frameCount; i++) {
       const img = new Image();
       const paddedIndex = i.toString().padStart(3, '0');
-      img.src = `about/WATCH/ezgif-frame-${paddedIndex}.jpg`;
+      img.src = `about/brand and marketing application/ezgif-frame-${paddedIndex}.jpg`;
       img.onload = () => {
         imageLoaded[i - 1] = true;
         if (i === 1) {
@@ -884,7 +884,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   if (wdCanvas && wdBlock) {
     const context = wdCanvas.getContext('2d');
-    const frameCount = 42;
+    const frameCount = 33;
     const images = [];
     const imageLoaded = new Array(frameCount).fill(false);
     let firstFrameLoaded = false;
@@ -920,7 +920,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 1; i <= frameCount; i++) {
       const img = new Image();
       const paddedIndex = i.toString().padStart(3, '0');
-      img.src = `about/new/ezgif-frame-${paddedIndex}.jpg`;
+      img.src = `about/website design & development/ezgif-frame-${paddedIndex}.jpg`;
       img.onload = () => {
         imageLoaded[i - 1] = true;
         if (i === 1) {

@@ -527,7 +527,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentFrame = 0;
     let targetFrame = 0;
 
-    function drawImagePropNaming(ctx, img) {
+    function drawImagePropNaming(ctx, img, alpha = 1.0) {
       const w = ctx.canvas.width;
       const h = ctx.canvas.height;
       const iw = img.width;
@@ -539,8 +539,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const cy = (h - nh) / 2;
       ctx.imageSmoothingEnabled = true;
       ctx.imageSmoothingQuality = "high";
-      ctx.clearRect(0, 0, w, h);
+      ctx.globalAlpha = alpha;
+      if (alpha === 1.0) ctx.clearRect(0, 0, w, h);
       ctx.drawImage(img, cx, cy, nw, nh);
+      ctx.globalAlpha = 1.0;
     }
 
     function resizeCanvasNaming() {
@@ -580,23 +582,32 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderCurrentFrameNaming() {
       if (!firstFrameLoaded) return;
       
-      const index = Math.round(currentFrame);
-      const safeIndex = Math.max(0, Math.min(index, frameCount - 1));
+      const index1 = Math.floor(currentFrame);
+      const index2 = Math.min(index1 + 1, frameCount - 1);
+      const alpha = currentFrame - index1;
       
-      if (imageLoaded[safeIndex]) {
-        drawImagePropNaming(context, images[safeIndex]);
-      } else {
-        for (let i = safeIndex; i >= 0; i--) {
-          if (imageLoaded[i]) {
-            drawImagePropNaming(context, images[i]);
-            break;
-          }
+      const safeIndex1 = Math.max(0, Math.min(index1, frameCount - 1));
+      const safeIndex2 = Math.max(0, Math.min(index2, frameCount - 1));
+      
+      let drawImg1 = null;
+      if (imageLoaded[safeIndex1]) drawImg1 = images[safeIndex1];
+      else {
+        for (let i = safeIndex1; i >= 0; i--) {
+          if (imageLoaded[i]) { drawImg1 = images[i]; break; }
         }
+      }
+      
+      if (drawImg1) drawImagePropNaming(context, drawImg1, 1.0);
+      
+      if (alpha > 0.01 && safeIndex1 !== safeIndex2 && imageLoaded[safeIndex2]) {
+        drawImagePropNaming(context, images[safeIndex2], alpha);
+      }
+    }
       }
     }
 
     function renderNaming() {
-      currentFrame += (targetFrame - currentFrame) * 0.1;
+      currentFrame += (targetFrame - currentFrame) * 0.06;
       if (Math.abs(targetFrame - currentFrame) > 0.01) {
         renderCurrentFrameNaming();
       }
@@ -622,7 +633,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentFrame = 0;
     let targetFrame = 0;
 
-    function drawImagePropDesign(ctx, img) {
+    function drawImagePropDesign(ctx, img, alpha = 1.0) {
       const w = ctx.canvas.width;
       const h = ctx.canvas.height;
       const iw = img.width;
@@ -631,11 +642,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const nw = iw * r;
       const nh = ih * r;
       const cx = (w - nw) / 2;
-      const cy = (h - nh) / 2; // centered
+      const cy = (h - nh) / 2;
       ctx.imageSmoothingEnabled = true;
       ctx.imageSmoothingQuality = "high";
-      ctx.clearRect(0, 0, w, h);
+      ctx.globalAlpha = alpha;
+      if (alpha === 1.0) ctx.clearRect(0, 0, w, h);
       ctx.drawImage(img, cx, cy, nw, nh);
+      ctx.globalAlpha = 1.0;
     }
 
     function resizeCanvasDesign() {
@@ -674,18 +687,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderCurrentFrameDesign() {
       if (!firstFrameLoaded) return;
-      const index = Math.round(currentFrame);
-      const safeIndex = Math.max(0, Math.min(index, frameCount - 1));
-      if (imageLoaded[safeIndex]) drawImagePropDesign(context, images[safeIndex]);
+      
+      const index1 = Math.floor(currentFrame);
+      const index2 = Math.min(index1 + 1, frameCount - 1);
+      const alpha = currentFrame - index1;
+      
+      const safeIndex1 = Math.max(0, Math.min(index1, frameCount - 1));
+      const safeIndex2 = Math.max(0, Math.min(index2, frameCount - 1));
+      
+      let drawImg1 = null;
+      if (imageLoaded[safeIndex1]) drawImg1 = images[safeIndex1];
       else {
-        for (let i = safeIndex; i >= 0; i--) {
-          if (imageLoaded[i]) { drawImagePropDesign(context, images[i]); break; }
+        for (let i = safeIndex1; i >= 0; i--) {
+          if (imageLoaded[i]) { drawImg1 = images[i]; break; }
         }
+      }
+      
+      if (drawImg1) drawImagePropDesign(context, drawImg1, 1.0);
+      
+      if (alpha > 0.01 && safeIndex1 !== safeIndex2 && imageLoaded[safeIndex2]) {
+        drawImagePropDesign(context, images[safeIndex2], alpha);
+      }
+    }
       }
     }
 
     function renderDesign() {
-      currentFrame += (targetFrame - currentFrame) * 0.1;
+      currentFrame += (targetFrame - currentFrame) * 0.06;
       if (Math.abs(targetFrame - currentFrame) > 0.01) {
         renderCurrentFrameDesign();
       }
@@ -709,7 +737,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentFrame = 0;
     let targetFrame = 0;
 
-    function drawImagePropStrategy(ctx, img) {
+    function drawImagePropStrategy(ctx, img, alpha = 1.0) {
       const w = ctx.canvas.width;
       const h = ctx.canvas.height;
       const iw = img.width;
@@ -721,8 +749,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const cy = (h - nh) / 2;
       ctx.imageSmoothingEnabled = true;
       ctx.imageSmoothingQuality = "high";
-      ctx.clearRect(0, 0, w, h);
+      ctx.globalAlpha = alpha;
+      if (alpha === 1.0) ctx.clearRect(0, 0, w, h);
       ctx.drawImage(img, cx, cy, nw, nh);
+      ctx.globalAlpha = 1.0;
     }
 
     function resizeCanvasStrategy() {
@@ -761,18 +791,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderCurrentFrameStrategy() {
       if (!firstFrameLoaded) return;
-      const index = Math.round(currentFrame);
-      const safeIndex = Math.max(0, Math.min(index, frameCount - 1));
-      if (imageLoaded[safeIndex]) drawImagePropStrategy(context, images[safeIndex]);
+      
+      const index1 = Math.floor(currentFrame);
+      const index2 = Math.min(index1 + 1, frameCount - 1);
+      const alpha = currentFrame - index1;
+      
+      const safeIndex1 = Math.max(0, Math.min(index1, frameCount - 1));
+      const safeIndex2 = Math.max(0, Math.min(index2, frameCount - 1));
+      
+      let drawImg1 = null;
+      if (imageLoaded[safeIndex1]) drawImg1 = images[safeIndex1];
       else {
-        for (let i = safeIndex; i >= 0; i--) {
-          if (imageLoaded[i]) { drawImagePropStrategy(context, images[i]); break; }
+        for (let i = safeIndex1; i >= 0; i--) {
+          if (imageLoaded[i]) { drawImg1 = images[i]; break; }
         }
+      }
+      
+      if (drawImg1) drawImagePropStrategy(context, drawImg1, 1.0);
+      
+      if (alpha > 0.01 && safeIndex1 !== safeIndex2 && imageLoaded[safeIndex2]) {
+        drawImagePropStrategy(context, images[safeIndex2], alpha);
+      }
+    }
       }
     }
 
     function renderStrategy() {
-      currentFrame += (targetFrame - currentFrame) * 0.1;
+      currentFrame += (targetFrame - currentFrame) * 0.06;
       if (Math.abs(targetFrame - currentFrame) > 0.01) {
         renderCurrentFrameStrategy();
       }
@@ -796,7 +841,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentFrame = 0;
     let targetFrame = 0;
 
-    function drawImagePropLocalMarketing(ctx, img) {
+    function drawImagePropLocalMarketing(ctx, img, alpha = 1.0) {
       const w = ctx.canvas.width;
       const h = ctx.canvas.height;
       const iw = img.width;
@@ -808,8 +853,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const cy = (h - nh) / 2;
       ctx.imageSmoothingEnabled = true;
       ctx.imageSmoothingQuality = "high";
-      ctx.clearRect(0, 0, w, h);
+      ctx.globalAlpha = alpha;
+      if (alpha === 1.0) ctx.clearRect(0, 0, w, h);
       ctx.drawImage(img, cx, cy, nw, nh);
+      ctx.globalAlpha = 1.0;
     }
 
     function resizeCanvasMarketing() {
@@ -849,23 +896,32 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderCurrentFrameMarketing() {
       if (!firstFrameLoaded) return;
       
-      const index = Math.round(currentFrame);
-      const safeIndex = Math.max(0, Math.min(index, frameCount - 1));
+      const index1 = Math.floor(currentFrame);
+      const index2 = Math.min(index1 + 1, frameCount - 1);
+      const alpha = currentFrame - index1;
       
-      if (imageLoaded[safeIndex]) {
-        drawImagePropLocalMarketing(context, images[safeIndex]);
-      } else {
-        for (let i = safeIndex; i >= 0; i--) {
-          if (imageLoaded[i]) {
-            drawImagePropLocalMarketing(context, images[i]);
-            break;
-          }
+      const safeIndex1 = Math.max(0, Math.min(index1, frameCount - 1));
+      const safeIndex2 = Math.max(0, Math.min(index2, frameCount - 1));
+      
+      let drawImg1 = null;
+      if (imageLoaded[safeIndex1]) drawImg1 = images[safeIndex1];
+      else {
+        for (let i = safeIndex1; i >= 0; i--) {
+          if (imageLoaded[i]) { drawImg1 = images[i]; break; }
         }
+      }
+      
+      if (drawImg1) drawImagePropMarketing(context, drawImg1, 1.0);
+      
+      if (alpha > 0.01 && safeIndex1 !== safeIndex2 && imageLoaded[safeIndex2]) {
+        drawImagePropMarketing(context, images[safeIndex2], alpha);
+      }
+    }
       }
     }
 
     function renderMarketing() {
-      currentFrame += (targetFrame - currentFrame) * 0.1;
+      currentFrame += (targetFrame - currentFrame) * 0.06;
       if (Math.abs(targetFrame - currentFrame) > 0.01) {
         renderCurrentFrameMarketing();
       }
@@ -891,7 +947,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentFrame = 0;
     let targetFrame = 0;
 
-    function drawImagePropLocalWD(ctx, img) {
+    function drawImagePropLocalWD(ctx, img, alpha = 1.0) {
       const w = ctx.canvas.width;
       const h = ctx.canvas.height;
       const iw = img.width;
@@ -900,12 +956,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const nw = iw * r;
       const nh = ih * r;
       const cx = (w - nw) / 2;
-      const verticalOffset = 0.5; // center
-      const cy = (h - nh) * verticalOffset;
+      const cy = (h - nh) / 2;
       ctx.imageSmoothingEnabled = true;
       ctx.imageSmoothingQuality = "high";
-      ctx.clearRect(0, 0, w, h);
+      ctx.globalAlpha = alpha;
+      if (alpha === 1.0) ctx.clearRect(0, 0, w, h);
       ctx.drawImage(img, cx, cy, nw, nh);
+      ctx.globalAlpha = 1.0;
     }
 
     function resizeCanvasWD() {
@@ -945,23 +1002,32 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderCurrentFrameWD() {
       if (!firstFrameLoaded) return;
       
-      const index = Math.round(currentFrame);
-      const safeIndex = Math.max(0, Math.min(index, frameCount - 1));
+      const index1 = Math.floor(currentFrame);
+      const index2 = Math.min(index1 + 1, frameCount - 1);
+      const alpha = currentFrame - index1;
       
-      if (imageLoaded[safeIndex]) {
-        drawImagePropLocalWD(context, images[safeIndex]);
-      } else {
-        for (let i = safeIndex; i >= 0; i--) {
-          if (imageLoaded[i]) {
-            drawImagePropLocalWD(context, images[i]);
-            break;
-          }
+      const safeIndex1 = Math.max(0, Math.min(index1, frameCount - 1));
+      const safeIndex2 = Math.max(0, Math.min(index2, frameCount - 1));
+      
+      let drawImg1 = null;
+      if (imageLoaded[safeIndex1]) drawImg1 = images[safeIndex1];
+      else {
+        for (let i = safeIndex1; i >= 0; i--) {
+          if (imageLoaded[i]) { drawImg1 = images[i]; break; }
         }
+      }
+      
+      if (drawImg1) drawImagePropWD(context, drawImg1, 1.0);
+      
+      if (alpha > 0.01 && safeIndex1 !== safeIndex2 && imageLoaded[safeIndex2]) {
+        drawImagePropWD(context, images[safeIndex2], alpha);
+      }
+    }
       }
     }
 
     function renderWD() {
-      currentFrame += (targetFrame - currentFrame) * 0.1;
+      currentFrame += (targetFrame - currentFrame) * 0.06;
       if (Math.abs(targetFrame - currentFrame) > 0.01) {
         renderCurrentFrameWD();
       }

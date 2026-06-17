@@ -2,7 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const canvas = document.getElementById('webgl-fluid-canvas');
   if (canvas && typeof THREE !== 'undefined') {
-    const scene = new THREE.Scene();
+    try {
+      const scene = new THREE.Scene();
     const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
     const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
     
@@ -214,6 +215,10 @@ document.addEventListener('DOMContentLoaded', () => {
       renderer.render(scene, camera);
     }
     animate();
+    } catch (e) {
+      console.warn('WebGL not supported or failed to initialize:', e);
+      document.body.classList.add('hero-loaded');
+    }
   } else {
     document.body.classList.add('hero-loaded');
   }
@@ -1171,5 +1176,58 @@ document.addEventListener('DOMContentLoaded', () => {
     
     lazyVideos.forEach(v => videoObserver.observe(v));
   }
+
+  // ==========================================
+  // AJAX FORM SUBMISSION
+  // ==========================================
+  const forms = document.querySelectorAll('form[action^="https://formsubmit.co"]');
+  forms.forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.innerHTML = 'Sending... <span class="arrow-circle">&rarr;</span>';
+        submitBtn.disabled = true;
+      }
+      
+      const formData = new FormData(form);
+      
+      fetch(form.action, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          if (submitBtn) {
+            submitBtn.innerHTML = 'Sent Successfully! <span class="arrow-circle">&check;</span>';
+            submitBtn.style.color = '#4ade80';
+          }
+          form.reset();
+          setTimeout(() => {
+            if (submitBtn) {
+              submitBtn.innerHTML = originalText;
+              submitBtn.style.color = '';
+              submitBtn.disabled = false;
+            }
+          }, 3000);
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      })
+      .catch(error => {
+        console.error('Form submission error:', error);
+        if (submitBtn) {
+          submitBtn.innerHTML = 'Error Sending <span class="arrow-circle">&times;</span>';
+          submitBtn.style.color = '#ef4444';
+          setTimeout(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.style.color = '';
+            submitBtn.disabled = false;
+          }, 3000);
+        }
+      });
+    });
+  });
 
 });

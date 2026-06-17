@@ -603,8 +603,6 @@ document.addEventListener('DOMContentLoaded', () => {
         drawImagePropNaming(context, images[safeIndex2], alpha);
       }
     }
-      }
-    }
 
     function renderNaming() {
       currentFrame += (targetFrame - currentFrame) * 0.06;
@@ -709,8 +707,6 @@ document.addEventListener('DOMContentLoaded', () => {
         drawImagePropDesign(context, images[safeIndex2], alpha);
       }
     }
-      }
-    }
 
     function renderDesign() {
       currentFrame += (targetFrame - currentFrame) * 0.06;
@@ -811,8 +807,6 @@ document.addEventListener('DOMContentLoaded', () => {
       
       if (alpha > 0.01 && safeIndex1 !== safeIndex2 && imageLoaded[safeIndex2]) {
         drawImagePropStrategy(context, images[safeIndex2], alpha);
-      }
-    }
       }
     }
 
@@ -917,8 +911,6 @@ document.addEventListener('DOMContentLoaded', () => {
         drawImagePropMarketing(context, images[safeIndex2], alpha);
       }
     }
-      }
-    }
 
     function renderMarketing() {
       currentFrame += (targetFrame - currentFrame) * 0.06;
@@ -1021,8 +1013,6 @@ document.addEventListener('DOMContentLoaded', () => {
       
       if (alpha > 0.01 && safeIndex1 !== safeIndex2 && imageLoaded[safeIndex2]) {
         drawImagePropWD(context, images[safeIndex2], alpha);
-      }
-    }
       }
     }
 

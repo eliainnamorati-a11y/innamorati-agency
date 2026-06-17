@@ -21,8 +21,18 @@ document.addEventListener('DOMContentLoaded', () => {
       typeof bgBase64 !== 'undefined' ? bgBase64 : 'assets/hero_background.png',
       function() {
         document.body.classList.add('hero-loaded');
+      },
+      undefined,
+      function(err) {
+        console.error('WebGL texture failed to load (possibly CORS). Proceeding to reveal hero text.', err);
+        document.body.classList.add('hero-loaded');
       }
     );
+    
+    // Safety fallback: Always reveal hero text after 2 seconds no matter what
+    setTimeout(() => {
+      document.body.classList.add('hero-loaded');
+    }, 2000);
     
     const material = new THREE.ShaderMaterial({
       transparent: true,

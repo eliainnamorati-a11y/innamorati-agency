@@ -674,8 +674,11 @@ h2.ambition-text {
   #industries-progress-bar {
     display: none !important;
   }
-  .block-text-massive, .block-text-massive.pt-small, .project-hero, .hero-approach {
+  .block-text-massive, .project-hero, .hero-approach {
     padding-top: 18vh !important;
+  }
+  .block-text-massive.pt-small {
+    padding-top: 10vh !important;
   }
   .studio-hero-text {
     padding-top: 18vh !important;

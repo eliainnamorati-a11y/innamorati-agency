@@ -850,7 +850,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentFrame = 0;
     let targetFrame = 0;
 
-    function drawImagePropLocalMarketing(ctx, img, alpha = 1.0) {
+    function drawImagePropMarketing(ctx, img, alpha = 1.0) {
       const w = ctx.canvas.width;
       const h = ctx.canvas.height;
       const iw = img.width;
@@ -954,7 +954,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentFrame = 0;
     let targetFrame = 0;
 
-    function drawImagePropLocalWD(ctx, img, alpha = 1.0) {
+    function drawImagePropWD(ctx, img, alpha = 1.0) {
       const w = ctx.canvas.width;
       const h = ctx.canvas.height;
       const iw = img.width;

@@ -694,7 +694,7 @@ h2.ambition-text {
     padding: 10vh 0 0 !important;
   }
   .expertise-section {
-    padding-top: 40px !important;
+    padding-top: 10px !important;
   }
   .expertise-sticky-wrapper {
     padding-top: 0 !important;
@@ -710,7 +710,7 @@ h2.ambition-text {
     position: relative;
     height: auto;
     overflow: hidden;
-    padding: 0 0 3rem 0;
+    padding: 0 0 1rem 0;
   }
   .industries-header {
     flex-direction: column;
@@ -1758,7 +1758,7 @@ h2.ambition-text {
     display: block;
     height: 1px;
     background-color: rgba(255,255,255,0.15);
-    margin: 60px 5vw 20px 5vw;
+    margin: 20px 5vw 20px 5vw;
   }
 }
 .reveal-line.in-view {

@@ -956,7 +956,7 @@ h2.ambition-text {
    Insights Layout
    ================================== */
 .insights-row {
-  display: flex; gap: 20px; justify-content: space-between;
+  display: flex; gap: 20px; justify-content: flex-start;
 }
 .insight-card {
   width: 32%; display: flex; flex-direction: column; text-decoration: none; color: inherit;
